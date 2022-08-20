@@ -1,0 +1,10 @@
+01_getting_started.md
+02_variables_data_types.md
+03_introducing_lists.md
+04_working_with_lists.md
+05_if_statements.md
+06_dictionaries.md
+07_user_input_while_loops.md
+08_functions.md
+09_classes.md
+10_files_and_exceptions.md
