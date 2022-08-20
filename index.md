@@ -1,16 +1,24 @@
-# Welcome to your Jupyter Book
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 
-This is a small sample book to give you a feel for how book content is
-structured.
+# Spatial Data Management with Earth Engine
 
-:::{note}
-Here is a note!
-:::
+This book is for the _Spatial Data Management_ course (GEOG-414) that I teach in Fall 2022 at the University of Tennessee, Knoxville.
 
-And here is a code block:
-
+```{figure} book/gee/images/ch01_geemap_gui.jpg
+---
+name: ch00_geemap_gui
+width: 825px
+---
+Visualizing global elevation data with Earth Engine and geemap.
 ```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
