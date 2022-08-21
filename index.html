@@ -489,12 +489,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommended-textbooks">
+   Recommended Textbooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demos">
+   Demos
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -506,6 +535,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommended-textbooks">
+   Recommended Textbooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demos">
+   Demos
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -516,12 +563,34 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="spatial-data-management-with-earth-engine">
 <h1>Spatial Data Management with Earth Engine<a class="headerlink" href="#spatial-data-management-with-earth-engine" title="Permalink to this headline">#</a></h1>
 <p>This book is for the <em>Spatial Data Management</em> course (GEOG-414) that I teach in Fall 2022 at the University of Tennessee, Knoxville.</p>
+<section id="recommended-textbooks">
+<h2>Recommended Textbooks<a class="headerlink" href="#recommended-textbooks" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Matthes, Eric (2019). <em>Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming</em>. No Starch Press. ISBN: 978-1593279288. (<a class="reference external" href="https://nostarch.com/pythoncrashcourse2e">Publisher website</a>)</p></li>
+<li><p>Qiusheng Wu (2022). <em>Geospatial Data Science with Earth Engine and Geemap</em>. Locate Press. (<a class="reference external" href="https://locatepress.com/book/geemap">Publisher website</a> | <a class="reference external" href="https://book.geemap.org/">Book website</a> | <a class="reference external" href="https://github.com/giswqs/geebook">GitHub</a>)</p></li>
+</ul>
+</section>
+<section id="demos">
+<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="timelapse">
+<img alt="https://github.com/giswqs/data/raw/main/gif/river.gif" src="https://github.com/giswqs/data/raw/main/gif/river.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Creating satellite timelapse with Earth Engine and geemap.</span><a class="headerlink" href="#timelapse" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <figure class="align-default" id="ch00-geemap-gui">
 <a class="reference internal image-reference" href="_images/ch01_geemap_gui.jpg"><img alt="_images/ch01_geemap_gui.jpg" src="_images/ch01_geemap_gui.jpg" style="width: 825px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Visualizing global elevation data with Earth Engine and geemap.</span><a class="headerlink" href="#ch00-geemap-gui" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Visualizing global elevation data with Earth Engine and geemap.</span><a class="headerlink" href="#ch00-geemap-gui" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<figure class="align-default" id="census">
+<a class="reference internal image-reference" href="_images/ch04_style_census_roads.jpg"><img alt="_images/ch04_style_census_roads.jpg" src="_images/ch04_style_census_roads.jpg" style="width: 825px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Visualizing US Census road data with Earth Engine and geemap.</span><a class="headerlink" href="#census" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
