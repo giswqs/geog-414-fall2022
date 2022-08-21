@@ -7,7 +7,9 @@ root: index
 parts:
   - caption: Preface
     chapters:
-      - file: book/preface/notebooks
+      - file: book/preface/instructor
+      - file: book/preface/syllabus
+      - file: book/preface/software
   - caption: Python Basics
     numbered: true
     maxdepth: 2
