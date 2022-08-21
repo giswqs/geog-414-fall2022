@@ -49,7 +49,7 @@ The line print("Hello!") ➌ is the only line of actual code in the body of this
 
 When you want to use this function, you call it. A function call tells Python to execute the code in the function. To call a function, you write the name of the function, followed by any necessary information in parentheses, as shown at ➍. Because no information is needed here, calling our function is as simple as entering greet_user(). As expected, it prints Hello!:
 
-```python
+```{code-cell} ipython3
 def greet_user():
     """Display a simple greeting."""
     print("Hello!")
@@ -61,7 +61,7 @@ greet_user()
 
 Modified slightly, the function greet_user() can not only tell the user Hello! but also greet them by name. For the function to do this, you enter username in the parentheses of the function’s definition at def greet_user(). By adding username here you allow the function to accept any value of username you specify. The function now expects you to provide a value for username each time you call it. When you call greet_user(), you can pass it a name, such as 'jesse', inside the parentheses:
 
-```python
+```{code-cell} ipython3
 def greet_user(username):
     """Display a simple greeting."""
     print(f"Hello, {username.title()}!")
@@ -85,7 +85,7 @@ When you call a function, Python must match each argument in the function call w
 
 To see how this works, consider a function that displays information about pets. The function tells us what kind of animal each pet is and the pet’s name, as shown here:
 
-```python
+```{code-cell} ipython3
 def describe_pet(animal_type, pet_name):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
@@ -98,7 +98,7 @@ describe_pet('hamster', 'harry')
 
 You can call a function as many times as needed. Describing a second, different pet requires just one more call to describe_pet():
 
-```python
+```{code-cell} ipython3
 def describe_pet(animal_type, pet_name):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
@@ -116,7 +116,7 @@ You can use as many positional arguments as you need in your functions. Python w
 
 You can get unexpected results if you mix up the order of the arguments in a function call when using positional arguments:
 
-```python
+```{code-cell} ipython3
 def describe_pet(animal_type, pet_name):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
@@ -135,7 +135,7 @@ A keyword argument is a name-value pair that you pass to a function. You directl
 
 Let’s rewrite pets.py using keyword arguments to call describe_pet():
 
-```python
+```{code-cell} ipython3
 def describe_pet(animal_type, pet_name):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
@@ -148,7 +148,7 @@ The function describe_pet() hasn’t changed. But when we call the function, we 
 
 The order of keyword arguments doesn’t matter because Python knows where each value should go. The following two function calls are equivalent:
 
-```python
+```{code-cell} ipython3
 describe_pet(animal_type='hamster', pet_name='harry')
 describe_pet(pet_name='harry', animal_type='hamster')
 ```
@@ -159,7 +159,7 @@ When writing a function, you can define a default value for each parameter. If a
 
 For example, if you notice that most of the calls to describe_pet() are being used to describe dogs, you can set the default value of animal_type to 'dog'. Now anyone calling describe_pet() for a dog can omit that information:
 
-```python
+```{code-cell} ipython3
 def describe_pet(pet_name, animal_type='dog'):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
@@ -174,7 +174,7 @@ Note that the order of the parameters in the function definition had to be chang
 
 To describe an animal other than a dog, you could use a function call like this:
 
-```python
+```{code-cell} ipython3
 describe_pet(pet_name='harry', animal_type='hamster')
 ```
 
@@ -192,7 +192,7 @@ With this definition, an argument always needs to be provided for pet_name, and 
 
 All of the following calls would work for this function:
 
-```python
+```{code-cell} ipython3
 # A dog named Willie.
 describe_pet('willie')
 describe_pet(pet_name='willie')
@@ -207,7 +207,7 @@ describe_pet(animal_type='hamster', pet_name='harry')
 
 When you start to use functions, don’t be surprised if you encounter errors about unmatched arguments. Unmatched arguments occur when you provide fewer or more arguments than a function needs to do its work. For example, here’s what happens if we try to call describe_pet() with no arguments:
 
-```python
+```{code-cell} ipython3
 def describe_pet(animal_type, pet_name):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
@@ -224,7 +224,7 @@ A function doesn’t always have to display its output directly. Instead, it can
 
 Let’s look at a function that takes a first and last name, and returns a neatly formatted full name:
 
-```python
+```{code-cell} ipython3
 def get_formatted_name(first_name, last_name):
     """Return a full name, neatly formatted."""
     full_name = f"{first_name} {last_name}"
@@ -240,7 +240,7 @@ Sometimes it makes sense to make an argument optional so that people using the f
 
 For example, say we want to expand get_formatted_name() to handle middle names as well. A first attempt to include middle names might look like this:
 
-```python
+```{code-cell} ipython3
 def get_formatted_name(first_name, middle_name, last_name):
     """Return a full name, neatly formatted."""
     full_name = f"{first_name} {middle_name} {last_name}"
@@ -254,7 +254,7 @@ This function works when given a first, middle, and last name. The function take
 
 But middle names aren’t always needed, and this function as written would not work if you tried to call it with only a first name and a last name. To make the middle name optional, we can give the middle_name argument an empty default value and ignore the argument unless the user provides a value. To make get_formatted_name() work without a middle name, we set the default value of middle_name to an empty string and move it to the end of the list of parameters:
 
-```python
+```{code-cell} ipython3
 def get_formatted_name(first_name, last_name, middle_name=''):
     """Return a full name, neatly formatted."""
     if middle_name:
@@ -274,7 +274,7 @@ print(musician)
 
 A function can return any kind of value you need it to, including more complicated data structures like lists and dictionaries. For example, the following function takes in parts of a name and returns a dictionary representing a person:
 
-```python
+```{code-cell} ipython3
 def build_person(first_name, last_name):
     """Return a dictionary of information about a person."""
     person = {'first': first_name, 'last': last_name}
@@ -286,7 +286,7 @@ print(musician)
 
 This function takes in simple textual information and puts it into a more meaningful data structure that lets you work with the information beyond just printing it. The strings 'jimi' and 'hendrix' are now labeled as a first name and last name. You can easily extend this function to accept optional values like a middle name, an age, an occupation, or any other information you want to store about a person. For example, the following change allows you to store a person’s age as well:
 
-```python
+```{code-cell} ipython3
 def build_person(first_name, last_name, age=None):
     """Return a dictionary of information about a person."""
     person = {'first': first_name, 'last': last_name}
@@ -304,7 +304,7 @@ We add a new optional parameter age to the function definition and assign the pa
 
 You can use functions with all the Python structures you’ve learned about so far. For example, let’s use the get_formatted_name() function with a while loop to greet users more formally. Here’s a first attempt at greeting people using their first and last names:
 
-```python
+```{code-cell} ipython3
 def get_formatted_name(first_name, last_name):
     """Return a full name, neatly formatted."""
     full_name = f"{first_name} {last_name}"
@@ -333,7 +333,7 @@ You’ll often find it useful to pass a list to a function, whether it’s a lis
 
 Say we have a list of users and want to print a greeting to each. The following example sends a list of names to a function called greet_users(), which greets each person in the list individually:
 
-```python
+```{code-cell} ipython3
 def greet_users(names):
     """Print a simple greeting to each user in the list."""
     for name in names:
@@ -350,7 +350,7 @@ When you pass a list to a function, the function can modify the list. Any change
 
 Consider a company that creates 3D printed models of designs that users submit. Designs that need to be printed are stored in a list, and after being printed they’re moved to a separate list. The following code does this without using functions:
 
-```python
+```{code-cell} ipython3
 # Start with some designs that need to be printed.
 unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
 completed_models = []
@@ -372,7 +372,7 @@ This program starts with a list of designs that need to be printed and an empty 
 
 We can reorganize this code by writing two functions, each of which does one specific job. Most of the code won’t change; we’re just making it more carefully structured. The first function will handle printing the designs, and the second will summarize the prints that have been made:
 
-```python
+```{code-cell} ipython3
 def print_models(unprinted_designs, completed_models):
     """
     Simulate printing each design, until none are left.
@@ -414,7 +414,7 @@ function_name(list_name[:])
 
 The slice notation [:] makes a copy of the list to send to the function.
 
-```python
+```{code-cell} ipython3
 def print_models(unprinted_designs, completed_models):
     """
     Simulate printing each design, until none are left.
@@ -447,7 +447,7 @@ Sometimes you won’t know ahead of time how many arguments a function needs to 
 
 For example, consider a function that builds a pizza. It needs to accept a number of toppings, but you can’t know ahead of time how many toppings a person will want. The function in the following example has one parameter, \*toppings, but this parameter collects as many arguments as the calling line provides:
 
-```python
+```{code-cell} ipython3
 def make_pizza(*toppings):
     """Print the list of toppings that have been requested."""
     print(toppings)
@@ -460,7 +460,7 @@ The asterisk in the parameter name `*toppings` tells Python to make an empty tup
 
 Now we can replace the print() call with a loop that runs through the list of toppings and describes the pizza being ordered:
 
-```python
+```{code-cell} ipython3
 def make_pizza(*toppings):
     """Summarize the pizza we are about to make."""
     print("\nMaking a pizza with the following toppings:")
@@ -477,7 +477,7 @@ If you want a function to accept several different kinds of arguments, the param
 
 For example, if the function needs to take in a size for the pizza, that parameter must come before the parameter `*toppings`:
 
-```python
+```{code-cell} ipython3
 def make_pizza(size, *toppings):
     """Summarize the pizza we are about to make."""
     print(f"\nMaking a {size}-inch pizza with the following toppings:")
@@ -492,7 +492,7 @@ make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 Sometimes you’ll want to accept an arbitrary number of arguments, but you won’t know ahead of time what kind of information will be passed to the function. In this case, you can write functions that accept as many key-value pairs as the calling statement provides. One example involves building user profiles: you know you’ll get information about a user, but you’re not sure what kind of information you’ll receive. The function build_profile() in the following example always takes in a first and last name, but it accepts an arbitrary number of keyword arguments as well:
 
-```python
+```{code-cell} ipython3
 def build_profile(first, last, **user_info):
     """Build a dictionary containing everything we know about a user."""
     user_info['first_name'] = first

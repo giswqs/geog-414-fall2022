@@ -40,7 +40,7 @@ You can model almost anything using classes. Let’s start by writing a simple c
 
 Each instance created from the Dog class will store a name and an age, and we’ll give each dog the ability to sit() and roll_over():
 
-```python
+```{code-cell} ipython3
 class Dog:
     """A simple attempt to model a dog."""
 
@@ -76,7 +76,7 @@ Think of a class as a set of instructions for how to make an instance. The class
 
 Let’s make an instance representing a specific dog:
 
-```python
+```{code-cell} ipython3
 my_dog = Dog('Willie', 6)
 print(f"My dog's name is {my_dog.name}.")
 print(f"My dog is {my_dog.age} years old.")
@@ -98,7 +98,7 @@ Dot notation is used often in Python. This syntax demonstrates how Python finds 
 
 After we create an instance from the class Dog, we can use dot notation to call any method defined in Dog. Let’s make our dog sit and roll over:
 
-```python
+```{code-cell} ipython3
 my_dog = Dog('Willie', 6)
 my_dog.sit()
 my_dog.roll_over()
@@ -112,7 +112,7 @@ This syntax is quite useful. When attributes and methods have been given appropr
 
 You can create as many instances from a class as you need. Let’s create a second dog called your_dog:
 
-```python
+```{code-cell} ipython3
 my_dog = Dog('Willie', 6)
 your_dog = Dog('Lucy', 3)
 
@@ -137,7 +137,7 @@ You can use classes to represent many real-world situations. Once you write a cl
 
 Let’s write a new class representing a car. Our class will store information about the kind of car we’re working with, and it will have a method that summarizes this information:
 
-```python
+```{code-cell} ipython3
 class Car:
     """A simple attempt to represent a car."""
 
@@ -162,7 +162,7 @@ When an instance is created, attributes can be defined without being passed in a
 
 Let’s add an attribute called odometer_reading that always starts with a value of 0. We’ll also add a method read_odometer() that helps us read each car’s odometer:
 
-```python
+```{code-cell} ipython3
 class Car:
     """A simple attempt to represent a car."""
 
@@ -195,7 +195,7 @@ You can change an attribute’s value in three ways: you can change the value di
 
 The simplest way to modify the value of an attribute is to access the attribute directly through an instance. Here we set the odometer reading to 23 directly:
 
-```python
+```{code-cell} ipython3
 my_new_car = Car('audi', 'a4', 2019)
 print(my_new_car.get_descriptive_name())
 my_new_car.odometer_reading = 23
@@ -206,7 +206,7 @@ my_new_car.read_odometer()
 
 It can be helpful to have methods that update certain attributes for you. Instead of accessing the attribute directly, you pass the new value to a method that handles the updating internally. Here’s an example showing a method called update_odometer():
 
-```python
+```{code-cell} ipython3
 class Car:
     """A simple attempt to represent a car."""
 
@@ -242,7 +242,7 @@ my_new_car.read_odometer()
 
 We can extend the method update_odometer() to do additional work every time the odometer reading is modified. Let’s add a little logic to make sure no one tries to roll back the odometer reading:
 
-```python
+```{code-cell} ipython3
 class Car:
     """A simple attempt to represent a car."""
 
@@ -286,7 +286,7 @@ my_new_car.read_odometer()
 
 Sometimes you’ll want to increment an attribute’s value by a certain amount rather than set an entirely new value. Say we buy a used car and put 100 miles on it between the time we buy it and the time we register it. Here’s a method that allows us to pass this incremental amount and add that value to the odometer reading:
 
-```python
+```{code-cell} ipython3
 class Car:
     """A simple attempt to represent a car."""
 
@@ -338,14 +338,14 @@ One interesting function from the random module is randint(). This function take
 
 Here’s how to generate a random number between 1 and 6:
 
-```python
+```{code-cell} ipython3
 from random import randint
 randint(1, 6)
 ```
 
 Another useful function is choice(). This function takes in a list or tuple and returns a randomly chosen element:
 
-```python
+```{code-cell} ipython3
 from random import choice
 players = ['charles', 'martina', 'michael', 'florence', 'eli']
 first_up = choice(players)

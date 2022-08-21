@@ -50,7 +50,7 @@ All the files used in this lecture can be found under the **data** folder.
 
 Here’s a program that opens this file, reads it, and prints the contents of the file to the screen:
 
-```python
+```{code-cell} ipython3
 with open('data/pi_digits.txt') as file_object:
     contents = file_object.read()
 print(contents)
@@ -64,7 +64,7 @@ Once we have a file object representing pi_digits.txt, we use the read() method 
 
 The only difference between this output and the original file is the extra blank line at the end of the output. The blank line appears because read() returns an empty string when it reaches the end of the file; this empty string shows up as a blank line. If you want to remove the extra blank line, you can use rstrip() in the call to print():
 
-```python
+```{code-cell} ipython3
 with open('data/pi_digits.txt') as file_object:
     contents = file_object.read()
     print(contents.rstrip())
@@ -105,7 +105,7 @@ When you’re reading a file, you’ll often want to examine each line of the fi
 
 You can use a for loop on the file object to examine each line from a file one at a time:
 
-```python
+```{code-cell} ipython3
 filename = 'data/pi_digits.txt'
 
 with open(filename) as file_object:
@@ -125,7 +125,7 @@ At ➊ we assign the name of the file we’re reading from to the variable filen
 
 When we print each line, we find even more blank lines. These blank lines appear because an invisible newline character is at the end of each line in the text file. The print function adds its own newline each time we call it, so we end up with two newline characters at the end of each line: one from the file and one from print(). Using rstrip() on each line in the print() call eliminates these extra blank lines:
 
-```python
+```{code-cell} ipython3
 filename = 'data/pi_digits.txt'
 
 with open(filename) as file_object:
@@ -139,7 +139,7 @@ When you use with, the file object returned by open() is only available inside t
 
 The following example stores the lines of pi_digits.txt in a list inside the with block and then prints the lines outside the with block:
 
-```python
+```{code-cell} ipython3
 filename = 'data/pi_digits.txt'
 
 with open(filename) as file_object:
@@ -165,7 +165,7 @@ At ➊ the readlines() method takes each line from the file and stores it in a l
 
 After you’ve read a file into memory, you can do whatever you want with that data, so let’s briefly explore the digits of pi. First, we’ll attempt to build a single string containing all the digits in the file with no whitespace in it:
 
-```python
+```{code-cell} ipython3
 filename = 'data/pi_digits.txt'
 
 with open(filename) as file_object:
@@ -181,7 +181,7 @@ print(len(pi_string))
 
 The variable pi_string contains the whitespace that was on the left side of the digits in each line, but we can get rid of that by using strip() instead of rstrip():
 
-```python
+```{code-cell} ipython3
 filename = 'data/pi_digits.txt'
 
 with open(filename) as file_object:
@@ -201,7 +201,7 @@ _Note: When Python reads from a text file, it interprets all text in the file as
 
 So far we’ve focused on analyzing a text file that contains only three lines, but the code in these examples would work just as well on much larger files. If we start with a text file that contains pi to 1,000,000 decimal places instead of just 30, we can create a single string containing all these digits. We don’t need to change our program at all except to pass it a different file. We’ll also print just the first 50 decimal places, so we don’t have to watch a million digits scroll by in the terminal:
 
-```python
+```{code-cell} ipython3
 filename = 'data/pi_million_digits.txt'
 
 with open(filename) as file_object:
@@ -221,7 +221,7 @@ Python has no inherent limit to how much data you can work with; you can work wi
 
 I’ve always been curious to know if my birthday appears anywhere in the digits of pi. Let’s use the program we just wrote to find out if someone’s birthday appears anywhere in the first million digits of pi. We can do this by expressing each birthday as a string of digits and seeing if that string appears anywhere in pi_string:
 
-```python
+```{code-cell} ipython3
 filename = 'data/pi_million_digits.txt'
 
 with open(filename) as file_object:
@@ -246,7 +246,7 @@ One of the simplest ways to save data is to write it to a file. When you write t
 
 To write text to a file, you need to call open() with a second argument telling Python that you want to write to the file. To see how this works, let’s write a simple message and store it in a file instead of printing it to the screen:
 
-```python
+```{code-cell} ipython3
 filename = 'data/programming.txt'
 
 with open(filename, 'w') as file_object:
@@ -270,7 +270,7 @@ _NOTE: Python can only write strings to a text file. If you want to store numeri
 
 The write() function doesn’t add any newlines to the text you write. So if you write more than one line without including newline characters, your file may not look the way you want it to:
 
-```python
+```{code-cell} ipython3
 filename = 'data/programming.txt'
 
 with open(filename, 'w') as file_object:
@@ -286,7 +286,7 @@ I love programming.I love creating new games.
 
 Including newlines in your calls to write() makes each string appear on its own line:
 
-```python
+```{code-cell} ipython3
 filename = 'data/programming.txt'
 
 with open(filename, 'w') as file_object:
@@ -309,7 +309,7 @@ If you want to add content to a file instead of writing over existing content, y
 
 Let’s modify the program by adding some new reasons we love programming to the existing file programming.txt:
 
-```python
+```{code-cell} ipython3
 filename = 'data/programming.txt'
 
 with open(filename, 'a') as file_object:
@@ -327,7 +327,7 @@ Exceptions are handled with try-except blocks. A try-except block asks Python to
 
 Let’s look at a simple error that causes Python to raise an exception. You probably know that it’s impossible to divide a number by zero, but let’s ask Python to do it anyway:
 
-```python
+```{code-cell} ipython3
 #print(5/0)
 ```
 
@@ -339,7 +339,7 @@ When you think an error may occur, you can write a try-except block to handle th
 
 Here’s what a try-except block for handling the ZeroDivisionError exception looks like:
 
-```python
+```{code-cell} ipython3
 try:
     print(5/0)
 except ZeroDivisionError:
@@ -362,7 +362,7 @@ Handling errors correctly is especially important when the program has more work
 
 Let’s create a simple calculator that does only division:
 
-```python
+```{code-cell} ipython3
 print("Give me two numbers, and I'll divide them.")
 print("Enter 'q' to quit.")
 
@@ -389,7 +389,7 @@ One common issue when working with files is handling missing files. The file you
 
 Let’s try to read a file that doesn’t exist. The following program tries to read in the contents of Alice in Wonderland, but I haven’t saved the file alice.txt in the same directory as alice.py:
 
-```python
+```{code-cell} ipython3
 # filename = 'alice.txt'
 
 # with open(filename, encoding='utf-8') as f:
@@ -402,7 +402,7 @@ Python can’t read from a missing file, so it raises an exception.
 
 The last line of the traceback reports a FileNotFoundError: this is the exception Python creates when it can’t find the file it’s trying to open. In this example, the open() function produces the error, so to handle it, the try block will begin with the line that contains open():
 
-```python
+```{code-cell} ipython3
 filename = 'alice.txt'
 
 try:
@@ -418,14 +418,14 @@ You can analyze text files containing entire books. Many classic works of litera
 
 Let’s pull in the text of Alice in Wonderland and try to count the number of words in the text. We’ll use the string method split(), which can build a list of words from a string. Here’s what split() does with a string containing just the title "Alice in Wonderland":
 
-```python
+```{code-cell} ipython3
 title = "Alice in Wonderland"
 title.split()
 ```
 
 The split() method separates a string into parts wherever it finds a space and stores all the parts of the string in a list. The result is a list of words from the string, although some punctuation may also appear with some of the words. To count the number of words in Alice in Wonderland, we’ll use split() on the entire text. Then we’ll count the items in the list to get a rough idea of the number of words in the text:
 
-```python
+```{code-cell} ipython3
 filename = 'data/alice.txt'
 
 try:
@@ -444,7 +444,7 @@ else:
 
 Let’s add more books to analyze. But before we do, let’s move the bulk of this program to a function called count_words(). By doing so, it will be easier to run the analysis for multiple books:
 
-```python
+```{code-cell} ipython3
 def count_words(filename):
     """Count the approximate number of words in a file."""
     try:
@@ -463,7 +463,7 @@ count_words(filename)
 
 Now we can write a simple loop to count the words in any text we want to analyze. We do this by storing the names of the files we want to analyze in a list, and then we call count_words() for each file in the list. We’ll try to count the words for Alice in Wonderland, Siddhartha, Moby Dick, and Little Women, which are all available in the public domain. I’ve intentionally left siddhartha.txt out of the directory containing word_count.py, so we can see how well our program handles a missing file:
 
-```python
+```{code-cell} ipython3
 def count_words(filename):
     """Count the approximate number of words in a file."""
     try:
@@ -488,7 +488,7 @@ Using the try-except block in this example provides two significant advantages. 
 
 In the previous example, we informed our users that one of the files was unavailable. But you don’t need to report every exception you catch. Sometimes you’ll want the program to fail silently when an exception occurs and continue on as if nothing happened. To make a program fail silently, you write a try block as usual, but you explicitly tell Python to do nothing in the except block. Python has a pass statement that tells it to do nothing in a block:
 
-```python
+```{code-cell} ipython3
 def count_words(filename):
     """Count the approximate number of words in a file."""
     try:
@@ -527,7 +527,7 @@ Let’s write a short program that stores a set of numbers and another program t
 
 The json.dump() function takes two arguments: a piece of data to store and a file object it can use to store the data. Here’s how you can use json.dump() to store a list of numbers:
 
-```python
+```{code-cell} ipython3
 import json
 
 numbers = [2, 3, 5, 7, 11, 13]
@@ -557,7 +557,7 @@ This program has no output, but let’s open the file numbers.json and look at i
 
 Now we’ll write a program that uses json.load() to read the list back into memory:
 
-```python
+```{code-cell} ipython3
 import json
 
 filename = 'data/numbers.json'
@@ -573,7 +573,7 @@ Saving data with json is useful when you’re working with user-generated data, 
 
 Let’s start by storing the user’s name:
 
-```python
+```{code-cell} ipython3
 import json
 
 def get_stored_username():
@@ -607,7 +607,7 @@ def greet_user():
 greet_user()
 ```
 
-```python
+```{code-cell} ipython3
 greet_user()
 ```
 

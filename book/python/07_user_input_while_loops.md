@@ -39,7 +39,7 @@ For example, the following program asks the user to enter some text, then displa
 
 <!-- #endregion -->
 
-```python
+```{code-cell} ipython3
 # message = input("Tell me something, and I will repeat it back to you: ")
 # print(message)
 ```
@@ -50,14 +50,14 @@ The input() function takes one argument: the prompt, or instructions, that we wa
 
 Each time you use the input() function, you should include a clear, easy-to-follow prompt that tells the user exactly what kind of information you’re looking for. Any statement that tells the user what to enter should work. For example:
 
-```python
+```{code-cell} ipython3
 # name = input("Please enter your name: ")
 # print(f"\nHello, {name}!")
 ```
 
 Sometimes you’ll want to write a prompt that’s longer than one line. For example, you might want to tell the user why you’re asking for certain input. You can assign your prompt to a variable and pass that variable to the input() function. This allows you to build your prompt over several lines, then write a clean input() statement.
 
-```python
+```{code-cell} ipython3
 prompt = "If you tell us who you are, we can personalize the messages you see."
 prompt += "\nWhat is your first name? "
 
@@ -73,14 +73,14 @@ The prompt now spans two lines, again with space after the question mark for cla
 
 When you use the input() function, Python interprets everything the user enters as a string. Consider the following interpreter session, which asks for the user’s age:
 
-```python
+```{code-cell} ipython3
 # age = input("How old are you? ")
 # age
 ```
 
 The user enters the number 21, but when we ask Python for the value of age, it returns '21', the string representation of the numerical value entered. We know Python interpreted the input as a string because the number is now enclosed in quotes. If all you want to do is print the input, this works well. But if you try to use the input as a number, you’ll get an error. We can resolve this issue by using the int() function, which tells Python to treat the input as a numerical value. The int() function converts a string representation of a number to a numerical representation, as shown here:
 
-```python
+```{code-cell} ipython3
 # age = input("How old are you? ")
 # age = int(age)
 # age
@@ -88,7 +88,7 @@ The user enters the number 21, but when we ask Python for the value of age, it r
 
 How do you use the int() function in an actual program? Consider a program that determines whether people are tall enough to ride a roller coaster:
 
-```python
+```{code-cell} ipython3
 # height = input("How tall are you, in inches? ")
 # height = int(height)
 
@@ -102,19 +102,19 @@ How do you use the int() function in an actual program? Consider a program that 
 
 A useful tool for working with numerical information is the modulo operator (%), which divides one number by another number and returns the remainder:
 
-```python
+```{code-cell} ipython3
 4 % 3
 ```
 
-```python
+```{code-cell} ipython3
 5 % 3
 ```
 
-```python
+```{code-cell} ipython3
 6 % 3
 ```
 
-```python
+```{code-cell} ipython3
 7 % 3
 ```
 
@@ -122,7 +122,7 @@ The modulo operator doesn’t tell you how many times one number fits into anoth
 
 When one number is divisible by another number, the remainder is 0, so the modulo operator always returns 0. You can use this fact to determine if a number is even or odd:
 
-```python
+```{code-cell} ipython3
 # number = input("Enter a number, and I'll tell you if it's even or odd: ")
 # number = int(number)
 
@@ -140,7 +140,7 @@ The for loop takes a collection of items and executes a block of code once for e
 
 You can use a while loop to count up through a series of numbers. For example, the following while loop counts from 1 to 5:
 
-```python
+```{code-cell} ipython3
 current_number = 1
 while current_number <= 5:
     print(current_number)
@@ -157,7 +157,7 @@ The programs you use every day most likely contain while loops. For example, a g
 
 We can make the parrot.py program run as long as the user wants by putting most of the program inside a while loop. We’ll define a quit value and then keep the program running as long as the user has not entered the quit value:
 
-```python
+```{code-cell} ipython3
 prompt = "\nTell me something, and I will repeat it back to you:"
 prompt += "\nEnter 'quit' to end the program. "
 
@@ -179,7 +179,7 @@ For example, in a game, several different events can end the game. When the play
 
 For a program that should run only as long as many conditions are true, you can define one variable that determines whether or not the entire program is active. This variable, called a flag, acts as a signal to the program. We can write our programs so they run while the flag is set to True and stop running when any of several events sets the value of the flag to False. As a result, our overall while statement needs to check only one condition: whether or not the flag is currently True. Then, all our other tests (to see if an event has occurred that should set the flag to False) can be neatly organized in the rest of the program.
 
-```python
+```{code-cell} ipython3
 prompt = "\nTell me something, and I will repeat it back to you:"
 prompt += "\nEnter 'quit' to end the program. "
 
@@ -199,7 +199,7 @@ To exit a while loop immediately without running any remaining code in the loop,
 
 For example, consider a program that asks the user about places they’ve visited. We can stop the while loop in this program by calling break as soon as the user enters the 'quit' value:
 
-```python
+```{code-cell} ipython3
 prompt = "\nPlease enter the name of a city you have visited:"
 prompt += "\n(Enter 'quit' when you are finished.) "
 
@@ -218,7 +218,7 @@ A loop that starts with while True will run forever unless it reaches a break st
 
 Rather than breaking out of a loop entirely without executing the rest of its code, you can use the continue statement to return to the beginning of the loop based on the result of a conditional test. For example, consider a loop that counts from 1 to 10 but prints only the odd numbers in that range:
 
-```python
+```{code-cell} ipython3
 current_number = 0
 while current_number < 10:
     current_number += 1
@@ -232,7 +232,7 @@ while current_number < 10:
 
 Every while loop needs a way to stop running so it won’t continue to run forever. For example, this counting loop should count from 1 to 5:
 
-```python
+```{code-cell} ipython3
 x = 1
 while x <= 5:
     print(x)
@@ -241,7 +241,7 @@ while x <= 5:
 
 But if you accidentally omit the line x += 1 (as shown next), the loop will run forever:
 
-```python
+```{code-cell} ipython3
 # # This loop runs forever!
 # x = 1
 # while x <= 5:
@@ -262,7 +262,7 @@ A for loop is effective for looping through a list, but you shouldn’t modify a
 
 Consider a list of newly registered but unverified users of a website. After we verify these users, how can we move them to a separate list of confirmed users? One way would be to use a while loop to pull users from the list of unconfirmed users as we verify them and then add them to a separate list of confirmed users. Here’s what that code might look like:
 
-```python
+```{code-cell} ipython3
 # Start with users that need to be verified,
 #  and an empty list to hold confirmed users.
 unconfirmed_users = ['alice', 'brian', 'candace']
@@ -288,7 +288,7 @@ In Chapter 3 we used remove() to remove a specific value from a list. The remove
 
 Say you have a list of pets with the value 'cat' repeated several times. To remove all instances of that value, you can run a while loop until 'cat' is no longer in the list, as shown here:
 
-```python
+```{code-cell} ipython3
 pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
 print(pets)
 
@@ -302,7 +302,7 @@ print(pets)
 
 You can prompt for as much input as you need in each pass through a while loop. Let’s make a polling program in which each pass through the loop prompts for the participant’s name and response. We’ll store the data we gather in a dictionary, because we want to connect each response with a particular user:
 
-```python
+```{code-cell} ipython3
 responses = {}
 
 # Set a flag to indicate that polling is active.

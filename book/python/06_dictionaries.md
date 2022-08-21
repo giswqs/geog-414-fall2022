@@ -28,30 +28,30 @@ Understanding dictionaries allows you to model a variety of real-world objects m
 - [NESTING](#nesting)
 - [SUMMARY](#summary)
 
-## A SIMPLE DICTIONARY <a class="anchor" id="a-simple-dictionary"></a>
+## A SIMPLE DICTIONARY
 
 Consider a game featuring aliens that can have different colors and point values. This simple dictionary stores information about a particular alien:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green', 'points': 5}
 
 print(alien_0['color'])
 print(alien_0['points'])
 ```
 
-## WORKING WITH DICTIONARIES <a class="anchor" id="working-with-dictionaries"></a>
+## WORKING WITH DICTIONARIES
 
 A dictionary in Python is a collection of key-value pairs. Each key is connected to a value, and you can use a key to access the value associated with that key. A key’s value can be a number, a string, a list, or even another dictionary. In fact, you can use any object that you can create in Python as a value in a dictionary.
 
 In Python, a dictionary is wrapped in braces, {}, with a series of key-value pairs inside the braces, as shown in the earlier example:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green', 'points': 5}
 ```
 
 A key-value pair is a set of values associated with each other. When you provide a key, Python returns the value associated with that key. Every key is connected to its value by a colon, and individual key-value pairs are separated by commas. You can store as many key-value pairs as you want in a dictionary. The simplest dictionary has exactly one key-value pair, as shown in this modified version of the alien_0 dictionary:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green'}
 ```
 
@@ -59,7 +59,7 @@ alien_0 = {'color': 'green'}
 
 To get the value associated with a key, give the name of the dictionary and then place the key inside a set of square brackets, as shown here:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green'}
 print(alien_0['color'])
 ```
@@ -70,7 +70,7 @@ Dictionaries are dynamic structures, and you can add new key-value pairs to a di
 
 Let’s add two new pieces of information to the alien_0 dictionary: the alien’s x- and y-coordinates, which will help us display the alien in a particular position on the screen. Let’s place the alien on the left edge of the screen, 25 pixels down from the top. Because screen coordinates usually start at the upper-left corner of the screen, we’ll place the alien on the left edge of the screen by setting the x-coordinate to 0 and 25 pixels from the top by setting its y-coordinate to positive 25, as shown here:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green', 'points': 5}
 print(alien_0)
 alien_0['x_position'] = 0
@@ -82,7 +82,7 @@ print(alien_0)
 
 It’s sometimes convenient, or even necessary, to start with an empty dictionary and then add each new item to it. To start filling an empty dictionary, define a dictionary with an empty set of braces and then add each key-value pair on its own line. For example, here’s how to build the alien_0 dictionary using this approach:
 
-```python
+```{code-cell} ipython3
 alien_0 = {}
 alien_0['color'] = 'green'
 alien_0['points'] = 5
@@ -94,7 +94,7 @@ print(alien_0)
 
 To modify a value in a dictionary, give the name of the dictionary with the key in square brackets and then the new value you want associated with that key. For example, consider an alien that changes from green to yellow as a game progresses:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green'}
 print(f"The alien is {alien_0['color']}.")
 
@@ -104,7 +104,7 @@ print(f"The alien is now {alien_0['color']}.")
 
 For a more interesting example, let’s track the position of an alien that can move at different speeds. We’ll store a value representing the alien’s current speed and then use it to determine how far to the right the alien should move:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
 print(f"Original position: {alien_0['x_position']}")
 
@@ -130,7 +130,7 @@ When you no longer need a piece of information that’s stored in a dictionary, 
 
 For example, let’s remove the key 'points' from the alien_0 dictionary along with its value:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green', 'points': 5}
 print(alien_0)
 
@@ -142,7 +142,7 @@ print(alien_0)
 
 The previous example involved storing different kinds of information about one object, an alien in a game. You can also use a dictionary to store one kind of information about many objects. For example, say you want to poll a number of people and ask them what their favorite programming language is. A dictionary is useful for storing the results of a simple poll, like this:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -153,7 +153,7 @@ favorite_languages = {
 
 To use this dictionary, given the name of a person who took the poll, you can easily look up their favorite language:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -171,7 +171,7 @@ Using keys in square brackets to retrieve the value you’re interested in from 
 
 Let’s see what happens when you ask for the point value of an alien that doesn’t have a point value set:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green', 'speed': 'slow'}
 # print(alien_0['points'])
 ```
@@ -192,12 +192,12 @@ You’ll learn more about how to handle errors like this in general in this cour
 
 The get() method requires a key as a first argument. As a second optional argument, you can pass the value to be returned if the key doesn’t exist:
 
-```python
+```{code-cell} ipython3
 point_value = alien_0.get('points', 'No point value assigned.')
 print(point_value)
 ```
 
-## LOOPING THROUGH A DICTIONARY <a class="anchor" id="looping-through-a-dictionary"></a>
+## LOOPING THROUGH A DICTIONARY
 
 A single Python dictionary can contain just a few key-value pairs or millions of pairs. Because a dictionary can contain large amounts of data, Python lets you loop through a dictionary. Dictionaries can be used to store information in a variety of ways; therefore, several different ways exist to loop through them. You can loop through all of a dictionary’s key-value pairs, through its keys, or through its values.
 
@@ -205,7 +205,7 @@ A single Python dictionary can contain just a few key-value pairs or millions of
 
 Before we explore the different approaches to looping, let’s consider a new dictionary designed to store information about a user on a website. The following dictionary would store one person’s username, first name, and last name:
 
-```python
+```{code-cell} ipython3
 user_0 = {
     'username': 'efermi',
     'first': 'enrico',
@@ -215,7 +215,7 @@ user_0 = {
 
 You can access any single piece of information about user_0 based on what you’ve already learned in this chapter. But what if you wanted to see everything stored in this user’s dictionary? To do so, you could loop through the dictionary using a for loop:
 
-```python
+```{code-cell} ipython3
 user_0 = {
     'username': 'efermi',
     'first': 'enrico',
@@ -235,7 +235,7 @@ As shown above, to write a for loop for a dictionary, you create names for the t
 
 The keys() method is useful when you don’t need to work with all of the values in a dictionary. Let’s loop through the favorite_languages dictionary and print the names of everyone who took the poll:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -257,7 +257,7 @@ You can choose to use the keys() method explicitly if it makes your code easier 
 
 You can access the value associated with any key you care about inside the loop by using the current key. Let’s print a message to a couple of friends about the languages they chose. We’ll loop through the names in the dictionary as we did previously, but when the name matches one of our friends, we’ll display a message about their favorite language:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -277,7 +277,7 @@ for name in favorite_languages.keys():
 
 You can also use the keys() method to find out if a particular person was polled. This time, let’s find out if Erin took the poll:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -295,7 +295,7 @@ Starting in Python 3.7, looping through a dictionary returns the items in the sa
 
 One way to do this is to sort the keys as they’re returned in the for loop. You can use the sorted() function to get a copy of the keys in order:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -311,7 +311,7 @@ for name in sorted(favorite_languages.keys()):
 
 If you are primarily interested in the values that a dictionary contains, you can use the values() method to return a list of values without any keys. For example, say we simply want a list of all languages chosen in our programming language poll without the name of the person who chose each language:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -326,7 +326,7 @@ for language in favorite_languages.values():
 
 This approach pulls all the values from the dictionary without checking for repeats. That might work fine with a small number of values, but in a poll with a large number of respondents, this would result in a very repetitive list. To see each language chosen without repetition, we can use a set. A set is a collection in which each item must be unique:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': 'python',
     'sarah': 'c',
@@ -341,7 +341,7 @@ for language in set(favorite_languages.values()):
 
 When you wrap set() around a list that contains duplicate items, Python identifies the unique items in the list and builds a set from those items. We use set() to pull out the unique languages in favorite_languages.values().
 
-## NESTING <a class="anchor" id="nesting"></a>
+## NESTING
 
 Sometimes you’ll want to store multiple dictionaries in a list, or a list of items as a value in a dictionary. This is called nesting. You can nest dictionaries inside a list, a list of items inside a dictionary, or even a dictionary inside another dictionary. Nesting is a powerful feature, as the following examples will demonstrate.
 
@@ -349,7 +349,7 @@ Sometimes you’ll want to store multiple dictionaries in a list, or a list of i
 
 The alien_0 dictionary contains a variety of information about one alien, but it has no room to store information about a second alien, much less a screen full of aliens. How can you manage a fleet of aliens? One way is to make a list of aliens in which each alien is a dictionary of information about that alien. For example, the following code builds a list of three aliens:
 
-```python
+```{code-cell} ipython3
 alien_0 = {'color': 'green', 'points': 5}
 alien_1 = {'color': 'yellow', 'points': 10}
 alien_2 = {'color': 'red', 'points': 15}
@@ -362,7 +362,7 @@ for alien in aliens:
 
 A more realistic example would involve more than three aliens with code that automatically generates each alien. In the following example we use range() to create a fleet of 30 aliens:
 
-```python
+```{code-cell} ipython3
 # Make an empty list for storing aliens.
 aliens = []
 
@@ -387,7 +387,7 @@ Rather than putting a dictionary inside a list, it’s sometimes useful to put a
 
 In the following example, two kinds of information are stored for each pizza: a type of crust and a list of toppings. The list of toppings is a value associated with the key 'toppings'. To use the items in the list, we give the name of the dictionary and the key 'toppings', as we would any value in the dictionary. Instead of returning a single value, we get a list of toppings:
 
-```python
+```{code-cell} ipython3
  # Store information about a pizza being ordered.
 pizza = {
     'crust': 'thick',
@@ -404,7 +404,7 @@ for topping in pizza['toppings']:
 
 You can nest a list inside a dictionary any time you want more than one value to be associated with a single key in a dictionary. In the earlier example of favorite programming languages, if we were to store each person’s responses in a list, people could choose more than one favorite language. When we loop through the dictionary, the value associated with each person would be a list of languages rather than a single language. Inside the dictionary’s for loop, we use another for loop to run through the list of languages associated with each person:
 
-```python
+```{code-cell} ipython3
 favorite_languages = {
     'jen': ['python', 'ruby'],
     'sarah': ['c'],
@@ -422,7 +422,7 @@ for name, languages in favorite_languages.items():
 
 You can nest a dictionary inside another dictionary, but your code can get complicated quickly when you do. For example, if you have several users for a website, each with a unique username, you can use the usernames as the keys in a dictionary. You can then store information about each user by using a dictionary as the value associated with their username. In the following listing, we store three pieces of information about each user: their first name, last name, and location. We’ll access this information by looping through the usernames and the dictionary of information associated with each username:
 
-```python
+```{code-cell} ipython3
 users = {
     'aeinstein': {
         'first': 'albert',
@@ -448,6 +448,6 @@ for username, user_info in users.items():
 
 ```
 
-## SUMMARY <a class="anchor" id="summary"></a>
+## SUMMARY
 
 In this chapter you learned how to define a dictionary and how to work with the information stored in a dictionary. You learned how to access and modify individual elements in a dictionary, and how to loop through all of the information in a dictionary. You learned to loop through a dictionary’s key-value pairs, its keys, and its values. You also learned how to nest multiple dictionaries in a list, nest lists in a dictionary, and nest a dictionary inside a dictionary.
