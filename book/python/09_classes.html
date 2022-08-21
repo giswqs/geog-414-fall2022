@@ -812,7 +812,9 @@ title="Print to PDF"
 <section id="creating-the-dog-class">
 <h3><a class="toc-backref" href="#id2"><span class="section-number">9.1.1. </span>Creating the Dog Class</a><a class="headerlink" href="#creating-the-dog-class" title="Permalink to this headline">#</a></h3>
 <p>Each instance created from the Dog class will store a name and an age, and we’ll give each dog the ability to sit() and roll_over():</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A simple attempt to model a dog.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
@@ -829,6 +831,8 @@ title="Print to PDF"
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> rolled over!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>There’s a lot to notice here, but don’t worry. You’ll see this structure throughout this chapter and have lots of time to get used to it. At ➊ we define a class called Dog. By convention, capitalized names refer to classes in Python. There are no parentheses in the class definition because we’re creating this class from scratch. At ➋ we write a docstring describing what this class does.</p>
 <section id="the-init-method">
 <h4><span class="section-number">9.1.1.1. </span>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> Method<a class="headerlink" href="#the-init-method" title="Permalink to this headline">#</a></h4>
@@ -842,10 +846,14 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id3"><span class="section-number">9.1.2. </span>Making an Instance from a Class</a><a class="headerlink" href="#making-an-instance-from-a-class" title="Permalink to this headline">#</a></h3>
 <p>Think of a class as a set of instructions for how to make an instance. The class Dog is a set of instructions that tells Python how to make individual instances representing specific dogs.</p>
 <p>Let’s make an instance representing a specific dog:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My dog&#39;s name is </span><span class="si">{</span><span class="n">my_dog</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My dog is </span><span class="si">{</span><span class="n">my_dog</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The Dog class we’re using here is the one we just wrote in the previous example. At ➊ we tell Python to create a dog whose name is ‘Willie’ and whose age is 6. When Python reads this line, it calls the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method in Dog with the arguments ‘Willie’ and 6. The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method creates an instance representing this particular dog and sets the name and age attributes using the values we provided. Python then returns an instance representing this dog. We assign that instance to the variable my_dog. The naming convention is helpful here: we can usually assume that a capitalized name like Dog refers to a class, and a lowercase name like my_dog refers to a single instance created from a class.</p>
 <section id="accessing-attributes">
@@ -859,10 +867,14 @@ title="Print to PDF"
 <section id="calling-methods">
 <h4><span class="section-number">9.1.2.2. </span>Calling Methods<a class="headerlink" href="#calling-methods" title="Permalink to this headline">#</a></h4>
 <p>After we create an instance from the class Dog, we can use dot notation to call any method defined in Dog. Let’s make our dog sit and roll over:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">my_dog</span><span class="o">.</span><span class="n">sit</span><span class="p">()</span>
 <span class="n">my_dog</span><span class="o">.</span><span class="n">roll_over</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To call a method, give the name of the instance (in this case, my_dog) and the method you want to call, separated by a dot. When Python reads my_dog.sit(), it looks for the method sit() in the class Dog and runs that code. Python interprets the line my_dog.roll_over() in the same way.</p>
 <p>This syntax is quite useful. When attributes and methods have been given appropriately descriptive names like name, age, sit(), and roll_over(), we can easily infer what a block of code, even one we’ve never seen before, is supposed to do.</p>
@@ -870,7 +882,9 @@ title="Print to PDF"
 <section id="creating-multiple-instances">
 <h4><span class="section-number">9.1.2.3. </span>Creating Multiple Instances<a class="headerlink" href="#creating-multiple-instances" title="Permalink to this headline">#</a></h4>
 <p>You can create as many instances from a class as you need. Let’s create a second dog called your_dog:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">your_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Lucy&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My dog&#39;s name is </span><span class="si">{</span><span class="n">my_dog</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -881,6 +895,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your dog is </span><span class="si">{</span><span class="n">your_dog</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
 <span class="n">your_dog</span><span class="o">.</span><span class="n">sit</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>In this example we create a dog named Willie and a dog named Lucy. Each dog is a separate instance with its own set of attributes, capable of the same set of actions.</p>
 <p>Even if we used the same name and age for the second dog, Python would still create a separate instance from the Dog class. You can make as many instances from one class as you need, as long as you give each instance a unique variable name or it occupies a unique spot in a list or dictionary.</p>
@@ -893,7 +909,9 @@ title="Print to PDF"
 <section id="the-car-class">
 <h3><a class="toc-backref" href="#id5"><span class="section-number">9.2.1. </span>The Car Class</a><a class="headerlink" href="#the-car-class" title="Permalink to this headline">#</a></h3>
 <p>Let’s write a new class representing a car. Our class will store information about the kind of car we’re working with, and it will have a method that summarizes this information:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A simple attempt to represent a car.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
@@ -911,12 +929,16 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">my_new_car</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="setting-a-default-value-for-an-attribute">
 <h3><a class="toc-backref" href="#id6"><span class="section-number">9.2.2. </span>Setting a Default Value for an Attribute</a><a class="headerlink" href="#setting-a-default-value-for-an-attribute" title="Permalink to this headline">#</a></h3>
 <p>When an instance is created, attributes can be defined without being passed in as parameters. These attributes can be defined in the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method, where they are assigned a default value.</p>
 <p>Let’s add an attribute called odometer_reading that always starts with a value of 0. We’ll also add a method read_odometer() that helps us read each car’s odometer:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A simple attempt to represent a car.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
@@ -940,6 +962,8 @@ title="Print to PDF"
 <span class="n">my_new_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="modifying-attribute-values">
 <h3><a class="toc-backref" href="#id7"><span class="section-number">9.2.3. </span>Modifying Attribute Values</a><a class="headerlink" href="#modifying-attribute-values" title="Permalink to this headline">#</a></h3>
@@ -947,17 +971,23 @@ title="Print to PDF"
 <section id="modifying-an-attributes-value-directly">
 <h4><span class="section-number">9.2.3.1. </span>Modifying an Attribute’s Value Directly<a class="headerlink" href="#modifying-an-attributes-value-directly" title="Permalink to this headline">#</a></h4>
 <p>The simplest way to modify the value of an attribute is to access the attribute directly through an instance. Here we set the odometer reading to 23 directly:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_new_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span> <span class="s1">&#39;a4&#39;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_new_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span> <span class="s1">&#39;a4&#39;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_new_car</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
 <span class="n">my_new_car</span><span class="o">.</span><span class="n">odometer_reading</span> <span class="o">=</span> <span class="mi">23</span>
 <span class="n">my_new_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="modifying-an-attributes-value-through-a-method">
 <h4><span class="section-number">9.2.3.2. </span>Modifying an Attribute’s Value Through a Method<a class="headerlink" href="#modifying-an-attributes-value-through-a-method" title="Permalink to this headline">#</a></h4>
 <p>It can be helpful to have methods that update certain attributes for you. Instead of accessing the attribute directly, you pass the new value to a method that handles the updating internally. Here’s an example showing a method called update_odometer():</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A simple attempt to represent a car.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
@@ -990,8 +1020,12 @@ title="Print to PDF"
 <span class="n">my_new_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can extend the method update_odometer() to do additional work every time the odometer reading is modified. Let’s add a little logic to make sure no one tries to roll back the odometer reading:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A simple attempt to represent a car.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
@@ -1030,11 +1064,15 @@ title="Print to PDF"
 <span class="n">my_new_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="incrementing-an-attributes-value-through-a-method">
 <h4><span class="section-number">9.2.3.3. </span>Incrementing an Attribute’s Value Through a Method<a class="headerlink" href="#incrementing-an-attributes-value-through-a-method" title="Permalink to this headline">#</a></h4>
 <p>Sometimes you’ll want to increment an attribute’s value by a certain amount rather than set an entirely new value. Say we buy a used car and put 100 miles on it between the time we buy it and the time we register it. Here’s a method that allows us to pass this incremental amount and add that value to the odometer reading:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A simple attempt to represent a car.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
@@ -1077,6 +1115,8 @@ title="Print to PDF"
 <span class="n">my_used_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -1085,16 +1125,24 @@ title="Print to PDF"
 <p>The Python standard library is a set of modules included with every Python installation. Now that you have a basic understanding of how functions and classes work, you can start to use modules like these that other programmers have written. You can use any function or class in the standard library by including a simple import statement at the top of your file. Let’s look at one module, random, which can be useful in modeling many real-world situations.</p>
 <p>One interesting function from the random module is randint(). This function takes two integer arguments and returns a randomly selected integer between (and including) those numbers.</p>
 <p>Here’s how to generate a random number between 1 and 6:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Another useful function is choice(). This function takes in a list or tuple and returns a randomly chosen element:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
 <span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
 <span class="n">first_up</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">players</span><span class="p">)</span>
 <span class="n">first_up</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="styling-classes-a-class-anchor-id-styling-classes-a">

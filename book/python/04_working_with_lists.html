@@ -847,38 +847,54 @@ title="Print to PDF"
 <h2><a class="toc-backref" href="#id2"><span class="section-number">4.1. </span>Looping Through an Entire List</a><a class="headerlink" href="#looping-through-an-entire-list" title="Permalink to this headline">#</a></h2>
 <p>You’ll often want to run through all entries in a list, performing the same task with each item. For example, in a game you might want to move every element on the screen by the same amount, or in a list of numbers you might want to perform the same statistical operation on every element. Or perhaps you’ll want to display each headline from a list of articles on a website. When you want to do the same action with every item in a list, you can use Python’s for loop.
 Let’s say we have a list of magicians’ names, and we want to print out each name in the list. We could do this by retrieving each name from the list individually, but this approach could cause several problems. For one, it would be repetitive to do this with a long list of names. Also, we’d have to change our code each time the list’s length changed. A for loop avoids both of these issues by letting Python manage these issues internally. Let’s use a for loop to print out each name in a list of magicians:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">magician</span> <span class="ow">in</span> <span class="n">magicians</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">magician</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>When you’re using loops for the first time, keep in mind that the set of steps is repeated once for each item in the list, no matter how many items are in the list. If you have a million items in your list, Python repeats these steps a million times—and usually very quickly. Also keep in mind when writing your own for loops that you can choose any name you want for the temporary variable that will be associated with each value in the list. However, it’s helpful to choose a meaningful name that represents a single item from the list.</p>
 <p>These naming conventions can help you follow the action being done on each item within a for loop. Using singular and plural names can help you identify whether a section of code is working with a single element from the list or the entire list.</p>
 <section id="doing-more-work-within-a-for-loop">
 <h3><a class="toc-backref" href="#id3"><span class="section-number">4.1.1. </span>Doing More Work Within a for Loop</a><a class="headerlink" href="#doing-more-work-within-a-for-loop" title="Permalink to this headline">#</a></h3>
 <p>You can do just about anything with each item in a for loop. Let’s build on the previous example by printing a message to each magician, telling them that they performed a great trick:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">magician</span> <span class="ow">in</span> <span class="n">magicians</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, that was a great trick!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">magician</span> <span class="ow">in</span> <span class="n">magicians</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, that was a great trick!&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I can&#39;t wait to see your next trick, </span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="doing-something-after-a-for-loop">
 <h3><a class="toc-backref" href="#id4"><span class="section-number">4.1.2. </span>Doing Something After a for Loop</a><a class="headerlink" href="#doing-something-after-a-for-loop" title="Permalink to this headline">#</a></h3>
 <p>What happens once a for loop has finished executing? Usually, you’ll want to summarize a block of output or move on to other work that your program must accomplish. Any lines of code after the for loop that are not indented are executed once without repetition. Let’s write a thank you to the group of magicians as a whole, thanking them for putting on an excellent show. To display this group message after all of the individual messages have been printed, we place the thank you message after the for loop without indentation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">magician</span> <span class="ow">in</span> <span class="n">magicians</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, that was a great trick!&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I can&#39;t wait to see your next trick, </span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you, everyone. That was a great magic show!&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -890,34 +906,48 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <section id="forgetting-to-indent">
 <h3><a class="toc-backref" href="#id6"><span class="section-number">4.2.1. </span>Forgetting to Indent</a><a class="headerlink" href="#forgetting-to-indent" title="Permalink to this headline">#</a></h3>
 <p>Always indent the line after the for statement in a loop. If you forget, Python will remind you:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="c1"># for magician in magicians:</span>
 <span class="c1"># print(magician)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="forgetting-to-indent-additional-lines">
 <h3><a class="toc-backref" href="#id7"><span class="section-number">4.2.2. </span>Forgetting to Indent Additional Lines</a><a class="headerlink" href="#forgetting-to-indent-additional-lines" title="Permalink to this headline">#</a></h3>
 <p>Sometimes your loop will run without any errors but won’t produce the expected result. This can happen when you’re trying to do several tasks in a loop and you forget to indent some of its lines. For example, this is what happens when we forget to indent the second line in the loop that tells each magician we’re looking forward to their next trick:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">magician</span> <span class="ow">in</span> <span class="n">magicians</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, that was a great trick!&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I can&#39;t wait to see your next trick, </span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="indenting-unnecessarily">
 <h3><a class="toc-backref" href="#id8"><span class="section-number">4.2.3. </span>Indenting Unnecessarily</a><a class="headerlink" href="#indenting-unnecessarily" title="Permalink to this headline">#</a></h3>
 <p>If you accidentally indent a line that doesn’t need to be indented, Python informs you about the unexpected indent:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># message = &quot;Hello Python world!&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># message = &quot;Hello Python world!&quot;</span>
 <span class="c1">#     print(message)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id1">
 <h3><a class="toc-backref" href="#id9"><span class="section-number">4.2.4. </span>Indenting Unnecessarily</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>After the Loop If you accidentally indent code that should run after a loop has finished, that code will be repeated once for each item in the list. Sometimes this prompts Python to report an error, but often this will result in a logical error. For example, let’s see what happens when we accidentally indent the line that thanked the magicians as a group for putting on a good show:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">magician</span> <span class="ow">in</span> <span class="n">magicians</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, that was a great trick!&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I can&#39;t wait to see your next trick, </span><span class="si">{</span><span class="n">magician</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -925,20 +955,30 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you everyone, that was a great magic show!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>How to print element index and content together?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">magician</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">magicians</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">magician</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="forgetting-the-colon">
 <h3><a class="toc-backref" href="#id10"><span class="section-number">4.2.5. </span>Forgetting the Colon</a><a class="headerlink" href="#forgetting-the-colon" title="Permalink to this headline">#</a></h3>
 <p>The colon at the end of a for statement tells Python to interpret the next line as the start of a loop.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">magicians</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">]</span>
 <span class="c1"># for magician in magicians</span>
 <span class="c1">#     print(magician)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -949,65 +989,105 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <section id="using-the-range-function">
 <h3><a class="toc-backref" href="#id12"><span class="section-number">4.3.1. </span>Using the range() Function</a><a class="headerlink" href="#using-the-range-function" title="Permalink to this headline">#</a></h3>
 <p>Python’s range() function makes it easy to generate a series of numbers. For example, you can use the range() function to print a series of numbers like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>In this example, range() prints only the numbers 1 through 4. This is another result of the off-by-one behavior you’ll see often in programming languages. The range() function causes Python to start counting at the first value you give it, and it stops when it reaches the second value you provide. Because it stops at that second value, the output never contains the end value, which would have been 5 in this case.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="using-range-to-make-a-list-of-numbers">
 <h3><a class="toc-backref" href="#id13"><span class="section-number">4.3.2. </span>Using range() to Make a List of Numbers</a><a class="headerlink" href="#using-range-to-make-a-list-of-numbers" title="Permalink to this headline">#</a></h3>
 <p>If you want to make a list of numbers, you can convert the results of range() directly into a list using the list() function. When you wrap list() around a call to the range() function, the output will be a list of numbers. In the example in the previous section, we simply printed out a series of numbers. We can use list() to convert that same set of numbers into a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can also use the range() function to tell Python to skip numbers in a given range. If you pass a third argument to range(), Python uses that value as a step size when generating numbers. For example, here’s how to list the even numbers between 1 and 10:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">even_numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">even_numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>You can create almost any set of numbers you want to using the range() function. For example, consider how you might make a list of the first 10 square numbers (that is, the square of each integer from 1 through 10). In Python, two asterisks (**) represent exponents. Here’s how you might put the first 10 square numbers into a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
     <span class="n">square</span> <span class="o">=</span> <span class="n">value</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>To write this code more concisely, omit the temporary variable square and append each new value directly to the list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
     <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="simple-statistics-with-a-list-of-numbers">
 <h3><a class="toc-backref" href="#id14"><span class="section-number">4.3.3. </span>Simple Statistics with a List of Numbers</a><a class="headerlink" href="#simple-statistics-with-a-list-of-numbers" title="Permalink to this headline">#</a></h3>
 <p>A few Python functions are helpful when working with lists of numbers. For example, you can easily find the minimum, maximum, and sum of a list of numbers:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">digits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">digits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="nb">min</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="list-comprehensions">
 <h3><a class="toc-backref" href="#id15"><span class="section-number">4.3.4. </span>List Comprehensions</a><a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h3>
 <p>The approach described earlier for generating the list squares consisted of using three or four lines of code. A list comprehension allows you to generate this same list in just one line of code. A list comprehension combines the for loop and the creation of new elements into one line, and automatically appends each new element. List comprehensions are not always presented to beginners, but I have included them here because you’ll most likely see them as soon as you start looking at other people’s code.</p>
 <p>The following example builds the same list of square numbers you saw earlier but uses a list comprehension:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To use this syntax, begin with a descriptive name for the list, such as squares. Next, open a set of square brackets and define the expression for the values you want to store in the new list. In this example the expression is value ** 2, which raises the value to the second power. Then, write a for loop to generate the numbers you want to feed into the expression, and close the square brackets. The for loop in this example is for value in range(1, 11), which feeds the values 1 through 10 into the expression value ** 2. Notice that no colon is used at the end of the for statement.</p>
 </section>
@@ -1018,38 +1098,62 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <section id="slicing-a-list">
 <h3><a class="toc-backref" href="#id17"><span class="section-number">4.4.1. </span>Slicing a List</a><a class="headerlink" href="#slicing-a-list" title="Permalink to this headline">#</a></h3>
 <p>To make a slice, you specify the index of the first and last elements you want to work with. As with the range() function, Python stops one item before the second index you specify. To output the first three elements in a list, you would request indices 0 through 3, which would return elements 0, 1, and 2. The following example involves a list of players on a team:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>If you omit the first index in a slice, Python automatically starts your slice at the beginning of the list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>A similar syntax works if you want a slice that includes the end of a list. For example, if you want all items from the third item through the last item, you can start with index 2 and omit the second index:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>This syntax allows you to output all of the elements from any point in your list to the end regardless of the length of the list. Recall that a negative index returns an element a certain distance from the end of a list; therefore, you can output any slice from the end of a list. For example, if we want to output the last three players on the roster, we can use the slice players[-3:]:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="looping-through-a-slice">
 <h3><a class="toc-backref" href="#id18"><span class="section-number">4.4.2. </span>Looping Through a Slice</a><a class="headerlink" href="#looping-through-a-slice" title="Permalink to this headline">#</a></h3>
 <p>You can use a slice in a for loop if you want to loop through a subset of the elements in a list. In the next example we loop through the first three players and print their names as part of a simple roster:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;charles&#39;</span><span class="p">,</span> <span class="s1">&#39;martina&#39;</span><span class="p">,</span> <span class="s1">&#39;michael&#39;</span><span class="p">,</span> <span class="s1">&#39;florence&#39;</span><span class="p">,</span> <span class="s1">&#39;eli&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here are the first three players on my team:&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">players</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="copying-a-list">
@@ -1057,7 +1161,9 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <p>Often, you’ll want to start with an existing list and make an entirely new list based on the first one. Let’s explore how copying a list works and examine one situation in which copying a list is useful.</p>
 <p>To copy a list, you can make a slice that includes the entire original list by omitting the first index and the second index ([:]). This tells Python to make a slice that starts at the first item and ends with the last item, producing a copy of the entire list.</p>
 <p>For example, imagine we have a list of our favorite foods and want to make a separate list of foods that a friend likes. This friend likes everything in our list so far, so we can create their list by copying ours:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">,</span> <span class="s1">&#39;falafel&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot cake&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">,</span> <span class="s1">&#39;falafel&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot cake&#39;</span><span class="p">]</span>
 <span class="n">friend_foods</span> <span class="o">=</span> <span class="n">my_foods</span><span class="p">[:]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My favorite foods are:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_foods</span><span class="p">)</span>
@@ -1065,8 +1171,12 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <span class="nb">print</span><span class="p">(</span><span class="n">friend_foods</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>To prove that we actually have two separate lists, we’ll add a new food to each list and show that each list keeps track of the appropriate person’s favorite foods:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">,</span> <span class="s1">&#39;falafel&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot cake&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">,</span> <span class="s1">&#39;falafel&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot cake&#39;</span><span class="p">]</span>
 <span class="n">friend_foods</span> <span class="o">=</span> <span class="n">my_foods</span><span class="p">[:]</span>
 <span class="n">my_foods</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;cannoli&#39;</span><span class="p">)</span>
 <span class="n">friend_foods</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;ice cream&#39;</span><span class="p">)</span>
@@ -1076,7 +1186,11 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <span class="nb">print</span><span class="p">(</span><span class="n">friend_foods</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">,</span> <span class="s1">&#39;falafel&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot cake&#39;</span><span class="p">]</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">,</span> <span class="s1">&#39;falafel&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot cake&#39;</span><span class="p">]</span>
 <span class="c1"># This doesn&#39;t work:</span>
 <span class="n">friend_foods</span> <span class="o">=</span> <span class="n">my_foods</span>
 <span class="n">my_foods</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;cannoli&#39;</span><span class="p">)</span>
@@ -1087,6 +1201,8 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <span class="nb">print</span><span class="p">(</span><span class="n">friend_foods</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 </section>
 <section id="tuples">
@@ -1095,34 +1211,52 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <section id="defining-a-tuple">
 <h3><a class="toc-backref" href="#id21"><span class="section-number">4.5.1. </span>Defining a Tuple</a><a class="headerlink" href="#defining-a-tuple" title="Permalink to this headline">#</a></h3>
 <p>A tuple looks just like a list except you use parentheses instead of square brackets. Once you define a tuple, you can access individual elements by using each item’s index, just as you would for a list. For example, if we have a rectangle that should always be a certain size, we can ensure that its size doesn’t change by putting the dimensions into a tuple:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Let’s see what happens if we try to change one of the items in the tuple dimensions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="c1"># dimensions[0] = 250</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Tuples are technically defined by the presence of a comma; the parentheses make them look neater and more readable. If you want to define a tuple with one element, you need to include a trailing comma:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="looping-through-all-values-in-a-tuple">
 <h3><a class="toc-backref" href="#id22"><span class="section-number">4.5.2. </span>Looping Through All Values in a Tuple</a><a class="headerlink" href="#looping-through-all-values-in-a-tuple" title="Permalink to this headline">#</a></h3>
 <p>You can loop over all the values in a tuple using a for loop, just as you did with a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="writing-over-a-tuple">
 <h3><a class="toc-backref" href="#id23"><span class="section-number">4.5.3. </span>Writing over a Tuple</a><a class="headerlink" href="#writing-over-a-tuple" title="Permalink to this headline">#</a></h3>
 <p>Although you can’t modify a tuple, you can assign a new value to a variable that represents a tuple. So if we wanted to change our dimensions, we could redefine the entire tuple:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original dimensions:&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
@@ -1132,6 +1266,8 @@ Let’s say we have a list of magicians’ names, and we want to print out each 
 <span class="k">for</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>

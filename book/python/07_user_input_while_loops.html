@@ -751,27 +751,38 @@ title="Print to PDF"
 <h2><a class="toc-backref" href="#id1"><span class="section-number">7.1. </span>HOW THE INPUT() FUNCTION WORKS</a><a class="headerlink" href="#how-the-input-function-works" title="Permalink to this headline">#</a></h2>
 <p>The input() function pauses your program and waits for the user to enter some text. Once Python receives the user’s input, it assigns that input to a variable to make it convenient for you to work with.</p>
 <p>For example, the following program asks the user to enter some text, then displays that message back to the user:</p>
-<!-- #endregion -->
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># message = input(&quot;Tell me something, and I will repeat it back to you: &quot;)</span>
+<!-- #endregion --><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># message = input(&quot;Tell me something, and I will repeat it back to you: &quot;)</span>
 <span class="c1"># print(message)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The input() function takes one argument: the prompt, or instructions, that we want to display to the user so they know what to do. In this example, when Python runs the first line, the user sees the prompt Tell me something, and I will repeat it back to you: . The program waits while the user enters their response and continues after the user presses ENTER. The response is assigned to the variable message, then print(message) displays the input back to the user:</p>
 </section>
 <section id="writing-clear-prompts">
 <h2><a class="toc-backref" href="#id2"><span class="section-number">7.2. </span>Writing Clear Prompts</a><a class="headerlink" href="#writing-clear-prompts" title="Permalink to this headline">#</a></h2>
 <p>Each time you use the input() function, you should include a clear, easy-to-follow prompt that tells the user exactly what kind of information you’re looking for. Any statement that tells the user what to enter should work. For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># name = input(&quot;Please enter your name: &quot;)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># name = input(&quot;Please enter your name: &quot;)</span>
 <span class="c1"># print(f&quot;\nHello, {name}!&quot;)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Sometimes you’ll want to write a prompt that’s longer than one line. For example, you might want to tell the user why you’re asking for certain input. You can assign your prompt to a variable and pass that variable to the input() function. This allows you to build your prompt over several lines, then write a clean input() statement.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;If you tell us who you are, we can personalize the messages you see.&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;If you tell us who you are, we can personalize the messages you see.&quot;</span>
 <span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">What is your first name? &quot;</span>
 
 <span class="c1"># name = input(prompt)</span>
 <span class="c1"># print(f&quot;\nHello, {name}!&quot;)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>This example shows one way to build a multi-line string. The first line assigns the first part of the message to the variable prompt. In the second line, the operator += takes the string that was assigned to prompt and adds the new string onto the end.</p>
 <p>The prompt now spans two lines, again with space after the question mark for clarity:</p>
@@ -779,18 +790,28 @@ title="Print to PDF"
 <section id="using-int-to-accept-numerical-input">
 <h2><a class="toc-backref" href="#id3"><span class="section-number">7.3. </span>Using int() to Accept Numerical Input</a><a class="headerlink" href="#using-int-to-accept-numerical-input" title="Permalink to this headline">#</a></h2>
 <p>When you use the input() function, Python interprets everything the user enters as a string. Consider the following interpreter session, which asks for the user’s age:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># age = input(&quot;How old are you? &quot;)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># age = input(&quot;How old are you? &quot;)</span>
 <span class="c1"># age</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The user enters the number 21, but when we ask Python for the value of age, it returns ‘21’, the string representation of the numerical value entered. We know Python interpreted the input as a string because the number is now enclosed in quotes. If all you want to do is print the input, this works well. But if you try to use the input as a number, you’ll get an error. We can resolve this issue by using the int() function, which tells Python to treat the input as a numerical value. The int() function converts a string representation of a number to a numerical representation, as shown here:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># age = input(&quot;How old are you? &quot;)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># age = input(&quot;How old are you? &quot;)</span>
 <span class="c1"># age = int(age)</span>
 <span class="c1"># age</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>How do you use the int() function in an actual program? Consider a program that determines whether people are tall enough to ride a roller coaster:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># height = input(&quot;How tall are you, in inches? &quot;)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># height = input(&quot;How tall are you, in inches? &quot;)</span>
 <span class="c1"># height = int(height)</span>
 
 <span class="c1"># if height &gt;= 48:</span>
@@ -799,25 +820,45 @@ title="Print to PDF"
 <span class="c1">#     print(&quot;\nYou&#39;ll be able to ride when you&#39;re a little older.&quot;)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="the-modulo-operator">
 <h2><a class="toc-backref" href="#id4"><span class="section-number">7.4. </span>The Modulo Operator</a><a class="headerlink" href="#the-modulo-operator" title="Permalink to this headline">#</a></h2>
 <p>A useful tool for working with numerical information is the modulo operator (%), which divides one number by another number and returns the remainder:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">%</span> <span class="mi">3</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">%</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">%</span> <span class="mi">3</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">%</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The modulo operator doesn’t tell you how many times one number fits into another; it just tells you what the remainder is.</p>
 <p>When one number is divisible by another number, the remainder is 0, so the modulo operator always returns 0. You can use this fact to determine if a number is even or odd:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># number = input(&quot;Enter a number, and I&#39;ll tell you if it&#39;s even or odd: &quot;)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># number = input(&quot;Enter a number, and I&#39;ll tell you if it&#39;s even or odd: &quot;)</span>
 <span class="c1"># number = int(number)</span>
 
 <span class="c1"># if number % 2 == 0:</span>
@@ -825,6 +866,8 @@ title="Print to PDF"
 <span class="c1"># else:</span>
 <span class="c1">#     print(f&quot;\nThe number {number} is odd.&quot;)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="introducing-while-loops">
@@ -834,11 +877,15 @@ title="Print to PDF"
 <section id="the-while-loop-in-action">
 <h2><a class="toc-backref" href="#id6"><span class="section-number">7.6. </span>The while Loop in Action</a><a class="headerlink" href="#the-while-loop-in-action" title="Permalink to this headline">#</a></h2>
 <p>You can use a while loop to count up through a series of numbers. For example, the following while loop counts from 1 to 5:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">current_number</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">current_number</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">current_number</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">current_number</span><span class="p">)</span>
     <span class="n">current_number</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>In the first line, we start counting from 1 by assigning current_number the value 1. The while loop is then set to keep running as long as the value of current_number is less than or equal to 5. The code inside the loop prints the value of current_number and then adds 1 to that value with current_number += 1. (The += operator is shorthand for current_number = current_number + 1.)</p>
 <p>Python repeats the loop as long as the condition current_number &lt;= 5 is true. Because 1 is less than 5, Python prints 1 and then adds 1, making the current number 2. Because 2 is less than 5, Python prints 2 and adds 1 again, making the current number 3, and so on. Once the value of current_number is greater than 5, the loop stops running and the program end.</p>
@@ -847,7 +894,9 @@ title="Print to PDF"
 <section id="letting-the-user-choose-when-to-quit">
 <h2><a class="toc-backref" href="#id7"><span class="section-number">7.7. </span>Letting the User Choose When to Quit</a><a class="headerlink" href="#letting-the-user-choose-when-to-quit" title="Permalink to this headline">#</a></h2>
 <p>We can make the <a class="reference external" href="http://parrot.py">parrot.py</a> program run as long as the user wants by putting most of the program inside a while loop. We’ll define a quit value and then keep the program running as long as the user has not entered the quit value:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tell me something, and I will repeat it back to you:&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tell me something, and I will repeat it back to you:&quot;</span>
 <span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter &#39;quit&#39; to end the program. &quot;</span>
 
 <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -858,6 +907,8 @@ title="Print to PDF"
 <span class="c1">#         print(message)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The first time through the loop, message is just an empty string, so Python enters the loop. At message = input(prompt), Python displays the prompt and waits for the user to enter their input. Whatever they enter is assigned to message and printed; then, Python reevaluates the condition in the while statement. As long as the user has not entered the word ‘quit’, the prompt is displayed again and Python waits for more input. When the user finally enters ‘quit’, Python stops executing the while loop and the program end.</p>
 </section>
 <section id="using-a-flag">
@@ -865,7 +916,9 @@ title="Print to PDF"
 <p>In the previous example, we had the program perform certain tasks while a given condition was true. But what about more complicated programs in which many different events could cause the program to stop running?</p>
 <p>For example, in a game, several different events can end the game. When the player runs out of ships, their time runs out, or the cities they were supposed to protect are all destroyed, the game should end. It needs to end if any one of these events happens. If many possible events might occur to stop the program, trying to test all these conditions in one while statement becomes complicated and difficult.</p>
 <p>For a program that should run only as long as many conditions are true, you can define one variable that determines whether or not the entire program is active. This variable, called a flag, acts as a signal to the program. We can write our programs so they run while the flag is set to True and stop running when any of several events sets the value of the flag to False. As a result, our overall while statement needs to check only one condition: whether or not the flag is currently True. Then, all our other tests (to see if an event has occurred that should set the flag to False) can be neatly organized in the rest of the program.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tell me something, and I will repeat it back to you:&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tell me something, and I will repeat it back to you:&quot;</span>
 <span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter &#39;quit&#39; to end the program. &quot;</span>
 
 <span class="n">active</span> <span class="o">=</span> <span class="kc">True</span>
@@ -878,12 +931,16 @@ title="Print to PDF"
 <span class="c1">#         print(message)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="using-break-to-exit-a-loop">
 <h2><a class="toc-backref" href="#id9"><span class="section-number">7.9. </span>Using break to Exit a Loop</a><a class="headerlink" href="#using-break-to-exit-a-loop" title="Permalink to this headline">#</a></h2>
 <p>To exit a while loop immediately without running any remaining code in the loop, regardless of the results of any conditional test, use the break statement. The break statement directs the flow of your program; you can use it to control which lines of code are executed and which aren’t, so the program only executes code that you want it to, when you want it to.</p>
 <p>For example, consider a program that asks the user about places they’ve visited. We can stop the while loop in this program by calling break as soon as the user enters the ‘quit’ value:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Please enter the name of a city you have visited:&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Please enter the name of a city you have visited:&quot;</span>
 <span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(Enter &#39;quit&#39; when you are finished.) &quot;</span>
 
 <span class="c1"># while True:</span>
@@ -895,12 +952,16 @@ title="Print to PDF"
 <span class="c1">#         print(f&quot;I&#39;d love to go to {city.title()}!&quot;)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>A loop that starts with while True will run forever unless it reaches a break statement. The loop in this program continues asking the user to enter the names of cities they’ve been to until they enter ‘quit’. When they enter ‘quit’, the break statement runs, causing Python to exit the loop.</p>
 </section>
 <section id="using-continue-in-a-loop">
 <h2><a class="toc-backref" href="#id10"><span class="section-number">7.10. </span>Using continue in a Loop</a><a class="headerlink" href="#using-continue-in-a-loop" title="Permalink to this headline">#</a></h2>
 <p>Rather than breaking out of a loop entirely without executing the rest of its code, you can use the continue statement to return to the beginning of the loop based on the result of a conditional test. For example, consider a loop that counts from 1 to 10 but prints only the odd numbers in that range:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">current_number</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">current_number</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">current_number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
     <span class="n">current_number</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">current_number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -909,22 +970,32 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="n">current_number</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="avoiding-infinite-loops">
 <h2><a class="toc-backref" href="#id11"><span class="section-number">7.11. </span>Avoiding Infinite Loops</a><a class="headerlink" href="#avoiding-infinite-loops" title="Permalink to this headline">#</a></h2>
 <p>Every while loop needs a way to stop running so it won’t continue to run forever. For example, this counting loop should count from 1 to 5:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>But if you accidentally omit the line x += 1 (as shown next), the loop will run forever:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># # This loop runs forever!</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># # This loop runs forever!</span>
 <span class="c1"># x = 1</span>
 <span class="c1"># while x &lt;= 5:</span>
 <span class="c1">#     print(x)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Every programmer accidentally writes an infinite while loop from time to time, especially when a program’s loops have subtle exit conditions. If your program gets stuck in an infinite loop, press CTRL-C or just close the terminal window displaying your program’s output.</p>
 <p>To avoid writing infinite loops, test every while loop and make sure the loop stops when you expect it to. If you want your program to end when the user enters a certain input value, run the program and enter that value. If the program doesn’t end, scrutinize the way your program handles the value that should cause the loop to exit. Make sure at least one part of the program can make the loop’s condition False or cause it to reach a break statement.</p>
@@ -937,7 +1008,9 @@ title="Print to PDF"
 <section id="moving-items-from-one-list-to-another">
 <h2><a class="toc-backref" href="#id13"><span class="section-number">7.13. </span>Moving Items from One List to Another</a><a class="headerlink" href="#moving-items-from-one-list-to-another" title="Permalink to this headline">#</a></h2>
 <p>Consider a list of newly registered but unverified users of a website. After we verify these users, how can we move them to a separate list of confirmed users? One way would be to use a while loop to pull users from the list of unconfirmed users as we verify them and then add them to a separate list of confirmed users. Here’s what that code might look like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with users that need to be verified,</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with users that need to be verified,</span>
 <span class="c1">#  and an empty list to hold confirmed users.</span>
 <span class="n">unconfirmed_users</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;brian&#39;</span><span class="p">,</span> <span class="s1">&#39;candace&#39;</span><span class="p">]</span>
 <span class="n">confirmed_users</span> <span class="o">=</span> <span class="p">[]</span>
@@ -956,12 +1029,16 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="n">confirmed_user</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="removing-all-instances-of-specific-values-from-a-list">
 <h2><a class="toc-backref" href="#id14"><span class="section-number">7.14. </span>Removing All Instances of Specific Values from a List</a><a class="headerlink" href="#removing-all-instances-of-specific-values-from-a-list" title="Permalink to this headline">#</a></h2>
 <p>In Chapter 3 we used remove() to remove a specific value from a list. The remove() function worked because the value we were interested in appeared only once in the list. But what if you want to remove all instances of a value from a list?</p>
 <p>Say you have a list of pets with the value ‘cat’ repeated several times. To remove all instances of that value, you can run a while loop until ‘cat’ is no longer in the list, as shown here:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;goldfish&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;goldfish&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pets</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="s1">&#39;cat&#39;</span> <span class="ow">in</span> <span class="n">pets</span><span class="p">:</span>
@@ -970,11 +1047,15 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">pets</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="filling-a-dictionary-with-user-input">
 <h2><a class="toc-backref" href="#id15"><span class="section-number">7.15. </span>Filling a Dictionary with User Input</a><a class="headerlink" href="#filling-a-dictionary-with-user-input" title="Permalink to this headline">#</a></h2>
 <p>You can prompt for as much input as you need in each pass through a while loop. Let’s make a polling program in which each pass through the loop prompts for the participant’s name and response. We’ll store the data we gather in a dictionary, because we want to connect each response with a particular user:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">responses</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">responses</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="c1"># Set a flag to indicate that polling is active.</span>
 <span class="n">polling_active</span> <span class="o">=</span> <span class="kc">True</span>
@@ -997,6 +1078,8 @@ title="Print to PDF"
 <span class="c1"># for name, response in responses.items():</span>
 <span class="c1">#     print(f&quot;{name} would like to climb {response}.&quot;)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="summary">

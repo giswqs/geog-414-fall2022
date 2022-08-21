@@ -905,19 +905,27 @@ title="Print to PDF"
 </div>
 <p>All the files used in this lecture can be found under the <strong>data</strong> folder.</p>
 <p>Here’s a program that opens this file, reads it, and prints the contents of the file to the screen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/pi_digits.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/pi_digits.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The first line of this program has a lot going on. Let’s start by looking at the open() function. To do any work with a file, even just printing its contents, you first need to open the file to access it. The open() function needs one argument: the name of the file you want to open. Python looks for this file in the directory where the program that’s currently being executed is stored. In this example, file_reader.py is currently running, so Python looks for pi_digits.txt in the directory where file_reader.py is stored. The open() function returns an object representing the file. Here, open(‘pi_digits.txt’) returns an object representing pi_digits.txt. Python assigns this object to file_object, which we’ll work with later in the program.</p>
 <p>The keyword with closes the file once access to it is no longer needed. Notice how we call open() in this program but not close(). You could open and close the file by calling open() and close(), but if a bug in your program prevents the close() method from being executed, the file may never close. This may seem trivial, but improperly closed files can cause data to be lost or corrupted. And if you call close() too early in your program, you’ll find yourself trying to work with a closed file (a file you can’t access), which leads to more errors. It’s not always easy to know exactly when you should close a file, but with the structure shown here, Python will figure that out for you. All you have to do is open the file and work with it as desired, trusting that Python will close it automatically when the with block finishes execution.</p>
 <p>Once we have a file object representing pi_digits.txt, we use the read() method in the second line of our program to read the entire contents of the file and store it as one long string in contents. When we print the value of contents, we get the entire text file back.</p>
 <p>The only difference between this output and the original file is the extra blank line at the end of the output. The blank line appears because read() returns an empty string when it reaches the end of the file; this empty string shows up as a blank line. If you want to remove the extra blank line, you can use rstrip() in the call to print():</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/pi_digits.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/pi_digits.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="file-paths">
@@ -943,12 +951,16 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id4"><span class="section-number">10.1.3. </span>Reading Line by Line</a><a class="headerlink" href="#reading-line-by-line" title="Permalink to this headline">#</a></h3>
 <p>When you’re reading a file, you’ll often want to examine each line of the file. You might be looking for certain information in the file, or you might want to modify the text in the file in some way. For example, you might want to read through a file of weather data and work with any line that includes the word sunny in the description of that day’s weather. In a news report, you might look for any line with the tag <code class="docutils literal notranslate"><span class="pre">&lt;headline&gt;</span></code> and rewrite that line with a specific kind of formatting.</p>
 <p>You can use a for loop on the file object to examine each line from a file one at a time:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file_object</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>➊ filename = &#39;pi_digits.txt&#39;
 
@@ -959,19 +971,25 @@ title="Print to PDF"
 </div>
 <p>At ➊ we assign the name of the file we’re reading from to the variable filename. This is a common convention when working with files. Because the variable filename doesn’t represent the actual file—it’s just a string telling Python where to find the file—you can easily swap out ‘pi_digits.txt’ for the name of another file you want to work with. After we call open(), an object representing the file and its contents is assigned to the variable file_object ➋. We again use the with syntax to let Python open and close the file properly. To examine the file’s contents, we work through each line in the file by looping over the file object ➌.</p>
 <p>When we print each line, we find even more blank lines. These blank lines appear because an invisible newline character is at the end of each line in the text file. The print function adds its own newline each time we call it, so we end up with two newline characters at the end of each line: one from the file and one from print(). Using rstrip() on each line in the print() call eliminates these extra blank lines:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file_object</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="making-a-list-of-lines-from-a-file">
 <h3><a class="toc-backref" href="#id5"><span class="section-number">10.1.4. </span>Making a List of Lines from a File</a><a class="headerlink" href="#making-a-list-of-lines-from-a-file" title="Permalink to this headline">#</a></h3>
 <p>When you use with, the file object returned by open() is only available inside the with block that contains it. If you want to retain access to a file’s contents outside the with block, you can store the file’s lines in a list inside the block and then work with that list. You can process parts of the file immediately and postpone some processing for later in the program.</p>
 <p>The following example stores the lines of pi_digits.txt in a list inside the with block and then prints the lines outside the with block:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -979,6 +997,8 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>filename = &#39;data/pi_digits.txt&#39;
 
@@ -994,7 +1014,9 @@ title="Print to PDF"
 <section id="working-with-a-files-contents">
 <h3><a class="toc-backref" href="#id6"><span class="section-number">10.1.5. </span>Working with a File’s Contents</a><a class="headerlink" href="#working-with-a-files-contents" title="Permalink to this headline">#</a></h3>
 <p>After you’ve read a file into memory, you can do whatever you want with that data, so let’s briefly explore the digits of pi. First, we’ll attempt to build a single string containing all the digits in the file with no whitespace in it:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -1007,8 +1029,12 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_string</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The variable pi_string contains the whitespace that was on the left side of the digits in each line, but we can get rid of that by using strip() instead of rstrip():</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_digits.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -1021,12 +1047,16 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_string</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p><em>Note: When Python reads from a text file, it interprets all text in the file as a string. If you read in a number and want to work with that value in a numerical context, you’ll have to convert it to an integer using the int() function or convert it to a float using the float() function.</em></p>
 </section>
 <section id="large-files-one-million-digits">
 <h3><a class="toc-backref" href="#id7"><span class="section-number">10.1.6. </span>Large Files: One Million Digits</a><a class="headerlink" href="#large-files-one-million-digits" title="Permalink to this headline">#</a></h3>
 <p>So far we’ve focused on analyzing a text file that contains only three lines, but the code in these examples would work just as well on much larger files. If we start with a text file that contains pi to 1,000,000 decimal places instead of just 30, we can create a single string containing all these digits. We don’t need to change our program at all except to pass it a different file. We’ll also print just the first 50 decimal places, so we don’t have to watch a million digits scroll by in the terminal:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_million_digits.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_million_digits.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -1039,12 +1069,16 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_string</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Python has no inherent limit to how much data you can work with; you can work with as much data as your system’s memory can handle.</p>
 </section>
 <section id="is-your-birthday-contained-in-pi">
 <h3><a class="toc-backref" href="#id8"><span class="section-number">10.1.7. </span>Is Your Birthday Contained in Pi?</a><a class="headerlink" href="#is-your-birthday-contained-in-pi" title="Permalink to this headline">#</a></h3>
 <p>I’ve always been curious to know if my birthday appears anywhere in the digits of pi. Let’s use the program we just wrote to find out if someone’s birthday appears anywhere in the first million digits of pi. We can do this by expressing each birthday as a string of digits and seeing if that string appears anywhere in pi_string:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_million_digits.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pi_million_digits.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -1060,6 +1094,8 @@ title="Print to PDF"
 <span class="c1">#     print(&quot;Your birthday does not appear in the first million digits of pi.&quot;)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 </section>
 <section id="writing-to-a-file-a-clsss-anchor-id-writing-a">
@@ -1068,11 +1104,15 @@ title="Print to PDF"
 <section id="writing-to-an-empty-file">
 <h3><a class="toc-backref" href="#id10"><span class="section-number">10.2.1. </span>Writing to an Empty File</a><a class="headerlink" href="#writing-to-an-empty-file" title="Permalink to this headline">#</a></h3>
 <p>To write text to a file, you need to call open() with a second argument telling Python that you want to write to the file. To see how this works, let’s write a simple message and store it in a file instead of printing it to the screen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I love programming.&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>➊ with open(filename, &#39;w&#39;) as file_object:
 ➋     file_object.write(&quot;I love programming.&quot;)
@@ -1086,24 +1126,32 @@ title="Print to PDF"
 <section id="writing-multiple-lines">
 <h3><a class="toc-backref" href="#id11"><span class="section-number">10.2.2. </span>Writing Multiple Lines</a><a class="headerlink" href="#writing-multiple-lines" title="Permalink to this headline">#</a></h3>
 <p>The write() function doesn’t add any newlines to the text you write. So if you write more than one line without including newline characters, your file may not look the way you want it to:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I love programming.&quot;</span><span class="p">)</span>
     <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I love creating new games.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>If you open programming.txt, you’ll see the two lines squished together:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">love</span> <span class="n">programming</span><span class="o">.</span><span class="n">I</span> <span class="n">love</span> <span class="n">creating</span> <span class="n">new</span> <span class="n">games</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Including newlines in your calls to write() makes each string appear on its own line:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I love programming.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I love creating new games.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The output now appears on separate lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">love</span> <span class="n">programming</span><span class="o">.</span>
@@ -1116,12 +1164,16 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id12"><span class="section-number">10.2.3. </span>Appending to a File</a><a class="headerlink" href="#appending-to-a-file" title="Permalink to this headline">#</a></h3>
 <p>If you want to add content to a file instead of writing over existing content, you can open the file in append mode. When you open a file in append mode, Python doesn’t erase the contents of the file before returning the file object. Any lines you write to the file will be added at the end of the file. If the file doesn’t exist yet, Python will create an empty file for you.</p>
 <p>Let’s modify the program by adding some new reasons we love programming to the existing file programming.txt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/programming.txt&#39;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I also love finding meaning in large datasets.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I love creating apps that can run in a browser.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -1132,8 +1184,12 @@ title="Print to PDF"
 <section id="handling-the-zerodivisionerror-exception">
 <h3><a class="toc-backref" href="#id14"><span class="section-number">10.3.1. </span>Handling the ZeroDivisionError Exception</a><a class="headerlink" href="#handling-the-zerodivisionerror-exception" title="Permalink to this headline">#</a></h3>
 <p>Let’s look at a simple error that causes Python to raise an exception. You probably know that it’s impossible to divide a number by zero, but let’s ask Python to do it anyway:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(5/0)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(5/0)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The error reported at ➊ in the traceback, ZeroDivisionError, is an exception object. Python creates this kind of object in response to a situation where it can’t do what we ask it to. When this happens, Python stops the program and tells us the kind of exception that was raised. We can use this information to modify our program. We’ll tell Python what to do when this kind of exception occurs; that way, if it happens again, we’re prepared.</p>
 </section>
@@ -1141,11 +1197,15 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id15"><span class="section-number">10.3.2. </span>Using try-except Blocks</a><a class="headerlink" href="#using-try-except-blocks" title="Permalink to this headline">#</a></h3>
 <p>When you think an error may occur, you can write a try-except block to handle the exception that might be raised. You tell Python to try running some code, and you tell it what to do if the code results in a particular kind of exception.</p>
 <p>Here’s what a try-except block for handling the ZeroDivisionError exception looks like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can&#39;t divide by zero!&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>We put print(5/0), the line that caused the error, inside a try block. If the code in a try block works, Python skips over the except block. If the code in the try block causes an error, Python looks for an except block whose error matches the one that was raised and runs the code in that block.</p>
 <p>In this example, the code in the try block produces a ZeroDivisionError, so Python looks for an except block telling it how to respond. Python then runs the code in that block, and the user sees a friendly error message instead of a traceback:</p>
@@ -1158,7 +1218,9 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id16"><span class="section-number">10.3.3. </span>Using Exceptions to Prevent Crashes</a><a class="headerlink" href="#using-exceptions-to-prevent-crashes" title="Permalink to this headline">#</a></h3>
 <p>Handling errors correctly is especially important when the program has more work to do after the error occurs. This happens often in programs that prompt users for input. If the program responds to invalid input appropriately, it can prompt for more valid input instead of crashing.</p>
 <p>Let’s create a simple calculator that does only division:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Give me two numbers, and I&#39;ll divide them.&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Give me two numbers, and I&#39;ll divide them.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter &#39;q&#39; to quit.&quot;</span><span class="p">)</span>
 
 <span class="c1"># while True:</span>
@@ -1176,22 +1238,30 @@ title="Print to PDF"
 <span class="c1">#         print(answer)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The try-except-else block works like this: Python attempts to run the code in the try block. The only code that should go in a try block is code that might cause an exception to be raised. Sometimes you’ll have additional code that should run only if the try block was successful; this code goes in the else block. The except block tells Python what to do in case a certain exception arises when it tries to run the code in the try block. By anticipating likely sources of errors, you can write robust programs that continue to run even when they encounter invalid data and missing resources. Your code will be resistant to innocent user mistakes and malicious attacks.</p>
 </section>
 <section id="handling-the-filenotfounderror-exception">
 <h3><a class="toc-backref" href="#id17"><span class="section-number">10.3.4. </span>Handling the FileNotFoundError Exception</a><a class="headerlink" href="#handling-the-filenotfounderror-exception" title="Permalink to this headline">#</a></h3>
 <p>One common issue when working with files is handling missing files. The file you’re looking for might be in a different location, the filename may be misspelled, or the file may not exist at all. You can handle all of these situations in a straightforward way with a try-except block.</p>
 <p>Let’s try to read a file that doesn’t exist. The following program tries to read in the contents of Alice in Wonderland, but I haven’t saved the file alice.txt in the same directory as <a class="reference external" href="http://alice.py">alice.py</a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename = &#39;alice.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename = &#39;alice.txt&#39;</span>
 
 <span class="c1"># with open(filename, encoding=&#39;utf-8&#39;) as f:</span>
 <span class="c1">#     contents = f.read()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>There are two changes here. One is the use of the variable f to represent the file object, which is a common convention. The second is the use of the encoding argument. This argument is needed when your system’s default encoding doesn’t match the encoding of the file that’s being read.</p>
 <p>Python can’t read from a missing file, so it raises an exception.</p>
 <p>The last line of the traceback reports a FileNotFoundError: this is the exception Python creates when it can’t find the file it’s trying to open. In this example, the open() function produces the error, so to handle it, the try block will begin with the line that contains open():</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;alice.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;alice.txt&#39;</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1200,17 +1270,25 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sorry, the file </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="analyzing-text">
 <h3><a class="toc-backref" href="#id18"><span class="section-number">10.3.5. </span>Analyzing Text</a><a class="headerlink" href="#analyzing-text" title="Permalink to this headline">#</a></h3>
 <p>You can analyze text files containing entire books. Many classic works of literature are available as simple text files because they are in the public domain. The texts used in this section come from Project Gutenberg (<a class="reference external" href="http://gutenberg.org/">http://gutenberg.org/</a>). Project Gutenberg maintains a collection of literary works that are available in the public domain, and it’s a great resource if you’re interested in working with literary texts in your programming projects.</p>
 <p>Let’s pull in the text of Alice in Wonderland and try to count the number of words in the text. We’ll use the string method split(), which can build a list of words from a string. Here’s what split() does with a string containing just the title “Alice in Wonderland”:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Alice in Wonderland&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Alice in Wonderland&quot;</span>
 <span class="n">title</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The split() method separates a string into parts wherever it finds a space and stores all the parts of the string in a list. The result is a list of words from the string, although some punctuation may also appear with some of the words. To count the number of words in Alice in Wonderland, we’ll use split() on the entire text. Then we’ll count the items in the list to get a rough idea of the number of words in the text:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/alice.txt&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/alice.txt&#39;</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1224,11 +1302,15 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The file </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> has about </span><span class="si">{</span><span class="n">num_words</span><span class="si">}</span><span class="s2"> words.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="working-with-multiple-files">
 <h3><a class="toc-backref" href="#id19"><span class="section-number">10.3.6. </span>Working with Multiple Files</a><a class="headerlink" href="#working-with-multiple-files" title="Permalink to this headline">#</a></h3>
 <p>Let’s add more books to analyze. But before we do, let’s move the bulk of this program to a function called count_words(). By doing so, it will be easier to run the analysis for multiple books:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Count the approximate number of words in a file.&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1244,8 +1326,12 @@ title="Print to PDF"
 <span class="n">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Now we can write a simple loop to count the words in any text we want to analyze. We do this by storing the names of the files we want to analyze in a list, and then we call count_words() for each file in the list. We’ll try to count the words for Alice in Wonderland, Siddhartha, Moby Dick, and Little Women, which are all available in the public domain. I’ve intentionally left siddhartha.txt out of the directory containing word_count.py, so we can see how well our program handles a missing file:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Count the approximate number of words in a file.&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1263,12 +1349,16 @@ title="Print to PDF"
     <span class="n">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Using the try-except block in this example provides two significant advantages. We prevent our users from seeing a traceback, and we let the program continue analyzing the texts it’s able to find. If we don’t catch the FileNotFoundError that siddhartha.txt raised, the user would see a full traceback, and the program would stop running after trying to analyze Siddhartha. It would never analyze Moby Dick or Little Women.</p>
 </section>
 <section id="failing-silently">
 <h3><a class="toc-backref" href="#id20"><span class="section-number">10.3.7. </span>Failing Silently</a><a class="headerlink" href="#failing-silently" title="Permalink to this headline">#</a></h3>
 <p>In the previous example, we informed our users that one of the files was unavailable. But you don’t need to report every exception you catch. Sometimes you’ll want the program to fail silently when an exception occurs and continue on as if nothing happened. To make a program fail silently, you write a try block as usual, but you explicitly tell Python to do nothing in the except block. Python has a pass statement that tells it to do nothing in a block:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Count the approximate number of words in a file.&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1286,6 +1376,8 @@ title="Print to PDF"
     <span class="n">count_words</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The pass statement also acts as a placeholder. It’s a reminder that you’re choosing to do nothing at a specific point in your program’s execution and that you might want to do something there later. For example, in this program we might decide to write any missing filenames to a file called missing_files.txt. Our users wouldn’t see this file, but we’d be able to read the file and deal with any missing texts.</p>
 </section>
 <section id="deciding-which-errors-to-report">
@@ -1302,7 +1394,9 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id23"><span class="section-number">10.4.1. </span>Using json.dump() and json.load()</a><a class="headerlink" href="#using-json-dump-and-json-load" title="Permalink to this headline">#</a></h3>
 <p>Let’s write a short program that stores a set of numbers and another program that reads these numbers back into memory. The first program will use json.dump() to store the set of numbers, and the second program will use json.load().</p>
 <p>The json.dump() function takes two arguments: a piece of data to store and a file object it can use to store the data. Here’s how you can use json.dump() to store a list of numbers:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
 
@@ -1310,6 +1404,8 @@ title="Print to PDF"
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import json
 
@@ -1326,7 +1422,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Now we’ll write a program that uses json.load() to read the list back into memory:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/numbers.json&#39;</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1335,12 +1433,16 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="saving-and-reading-user-generated-data">
 <h3><a class="toc-backref" href="#id24"><span class="section-number">10.4.2. </span>Saving and Reading User-Generated Data</a><a class="headerlink" href="#saving-and-reading-user-generated-data" title="Permalink to this headline">#</a></h3>
 <p>Saving data with json is useful when you’re working with user-generated data, because if you don’t store your user’s information somehow, you’ll lose it when the program stops running. Let’s look at an example where we prompt the user for their name the first time they run a program and then remember their name when they run the program again.</p>
 <p>Let’s start by storing the user’s name:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="k">def</span> <span class="nf">get_stored_username</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Get stored username if available.&quot;&quot;&quot;</span>
@@ -1373,8 +1475,14 @@ title="Print to PDF"
 <span class="n">greet_user</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">greet_user</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">greet_user</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Each function in this final version of remember_me.py has a single, clear purpose. We call greet_user(), and that function prints an appropriate message: it either welcomes back an existing user or greets a new user. It does this by calling get_stored_username(), which is responsible only for retrieving a stored username if one exists. Finally, greet_user() calls get_new_username() if necessary, which is responsible only for getting a new username and storing it. This compartmentalization of work is an essential part of writing clear code that will be easy to maintain and extend.</p>
 </section>

@@ -872,22 +872,30 @@ title="Print to PDF"
 <p>Any indented lines that follow def greet_user(): make up the body of the function. The text at ➋ is a comment called a docstring, which describes what the function does. Docstrings are enclosed in triple quotes, which Python looks for when it generates documentation for the functions in your programs.</p>
 <p>The line print(“Hello!”) ➌ is the only line of actual code in the body of this function, so greet_user() has just one job: print(“Hello!”).</p>
 <p>When you want to use this function, you call it. A function call tells Python to execute the code in the function. To call a function, you write the name of the function, followed by any necessary information in parentheses, as shown at ➍. Because no information is needed here, calling our function is as simple as entering greet_user(). As expected, it prints Hello!:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet_user</span><span class="p">():</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet_user</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Display a simple greeting.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
 
 <span class="n">greet_user</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <section id="passing-information-to-a-function">
 <h3><a class="toc-backref" href="#id2"><span class="section-number">8.1.1. </span>Passing Information to a Function</a><a class="headerlink" href="#passing-information-to-a-function" title="Permalink to this headline">#</a></h3>
 <p>Modified slightly, the function greet_user() can not only tell the user Hello! but also greet them by name. For the function to do this, you enter username in the parentheses of the function’s definition at def greet_user(). By adding username here you allow the function to accept any value of username you specify. The function now expects you to provide a value for username each time you call it. When you call greet_user(), you can pass it a name, such as ‘jesse’, inside the parentheses:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Display a simple greeting.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">username</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 
 <span class="n">greet_user</span><span class="p">(</span><span class="s1">&#39;jesse&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="arguments-and-parameters">
@@ -903,7 +911,9 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id5"><span class="section-number">8.2.1. </span>Positional Arguments</a><a class="headerlink" href="#positional-arguments" title="Permalink to this headline">#</a></h3>
 <p>When you call a function, Python must match each argument in the function call with a parameter in the function definition. The simplest way to do this is based on the order of the arguments provided. Values matched up this way are called positional arguments.</p>
 <p>To see how this works, consider a function that displays information about pets. The function tells us what kind of animal each pet is and the pet’s name, as shown here:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Display information about a pet.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I have a </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">&#39;s name is </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -911,11 +921,15 @@ title="Print to PDF"
 <span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="s1">&#39;harry&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="multiple-function-calls">
 <h3><a class="toc-backref" href="#id6"><span class="section-number">8.2.2. </span>Multiple Function Calls</a><a class="headerlink" href="#multiple-function-calls" title="Permalink to this headline">#</a></h3>
 <p>You can call a function as many times as needed. Describing a second, different pet requires just one more call to describe_pet():</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Display information about a pet.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I have a </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">&#39;s name is </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -924,19 +938,25 @@ title="Print to PDF"
 <span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;willie&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Calling a function multiple times is a very efficient way to work. The code describing a pet is written once in the function. Then, anytime you want to describe a new pet, you call the function with the new pet’s information. Even if the code for describing a pet were to expand to ten lines, you could still describe a new pet in just one line by calling the function again.</p>
 <p>You can use as many positional arguments as you need in your functions. Python works through the arguments you provide when calling the function and matches each one with the corresponding parameter in the function’s definition.</p>
 </section>
 <section id="order-matters-in-positional-arguments">
 <h3><a class="toc-backref" href="#id7"><span class="section-number">8.2.3. </span>Order Matters in Positional Arguments</a><a class="headerlink" href="#order-matters-in-positional-arguments" title="Permalink to this headline">#</a></h3>
 <p>You can get unexpected results if you mix up the order of the arguments in a function call when using positional arguments:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Display information about a pet.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I have a </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">&#39;s name is </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 
 <span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;harry&#39;</span><span class="p">,</span> <span class="s1">&#39;hamster&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>n this function call we list the name first and the type of animal second. Because the argument ‘harry’ is listed first this time, that value is assigned to the parameter animal_type. Likewise, ‘hamster’ is assigned to pet_name. Now we have a “harry” named “Hamster”.</p>
 <p>If you get funny results like this, check to make sure the order of the arguments in your function call matches the order of the parameters in the function’s definition.</p>
@@ -945,7 +965,9 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id8"><span class="section-number">8.2.4. </span>Keyword Arguments</a><a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">#</a></h3>
 <p>A keyword argument is a name-value pair that you pass to a function. You directly associate the name and the value within the argument, so when you pass the argument to the function, there’s no confusion (you won’t end up with a harry named Hamster). Keyword arguments free you from having to worry about correctly ordering your arguments in the function call, and they clarify the role of each value in the function call.</p>
 <p>Let’s rewrite <a class="reference external" href="http://pets.py">pets.py</a> using keyword arguments to call describe_pet():</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Display information about a pet.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I have a </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">&#39;s name is </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -953,18 +975,26 @@ title="Print to PDF"
 <span class="n">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The function describe_pet() hasn’t changed. But when we call the function, we explicitly tell Python which parameter each argument should be matched with. When Python reads the function call, it knows to assign the argument ‘hamster’ to the parameter animal_type and the argument ‘harry’ to pet_name. The output correctly shows that we have a hamster named Harry.</p>
 <p>The order of keyword arguments doesn’t matter because Python knows where each value should go. The following two function calls are equivalent:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
 <span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="default-values">
 <h3><a class="toc-backref" href="#id9"><span class="section-number">8.2.5. </span>Default Values</a><a class="headerlink" href="#default-values" title="Permalink to this headline">#</a></h3>
 <p>When writing a function, you can define a default value for each parameter. If an argument for a parameter is provided in the function call, Python uses the argument value. If not, it uses the parameter’s default value. So when you define a default value for a parameter, you can exclude the corresponding argument you’d usually write in the function call. Using default values can simplify your function calls and clarify the ways in which your functions are typically used.</p>
 <p>For example, if you notice that most of the calls to describe_pet() are being used to describe dogs, you can set the default value of animal_type to ‘dog’. Now anyone calling describe_pet() for a dog can omit that information:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;dog&#39;</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;dog&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Display information about a pet.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I have a </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">&#39;s name is </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -972,11 +1002,17 @@ title="Print to PDF"
 <span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;willie&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We changed the definition of describe_pet() to include a default value, ‘dog’, for animal_type. Now when the function is called with no animal_type specified, Python knows to use the value ‘dog’ for this parameter.</p>
 <p>Note that the order of the parameters in the function definition had to be changed. Because the default value makes it unnecessary to specify a type of animal as an argument, the only argument left in the function call is the pet’s name. Python still interprets this as a positional argument, so if the function is called with just a pet’s name, that argument will match up with the first parameter listed in the function’s definition. This is the reason the first parameter needs to be pet_name.</p>
 <p>To describe an animal other than a dog, you could use a function call like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Because an explicit argument for animal_type is provided, Python will ignore the parameter’s default value.</p>
 </section>
@@ -988,7 +1024,9 @@ title="Print to PDF"
 </div>
 <p>With this definition, an argument always needs to be provided for pet_name, and this value can be provided using the positional or keyword format. If the animal being described is not a dog, an argument for animal_type must be included in the call, and this argument can also be specified using the positional or keyword format.</p>
 <p>All of the following calls would work for this function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A dog named Willie.</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A dog named Willie.</span>
 <span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;willie&#39;</span><span class="p">)</span>
 <span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;willie&#39;</span><span class="p">)</span>
 
@@ -998,17 +1036,23 @@ title="Print to PDF"
 <span class="n">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="avoiding-argument-errors">
 <h3><a class="toc-backref" href="#id11"><span class="section-number">8.2.7. </span>Avoiding Argument Errors</a><a class="headerlink" href="#avoiding-argument-errors" title="Permalink to this headline">#</a></h3>
 <p>When you start to use functions, don’t be surprised if you encounter errors about unmatched arguments. Unmatched arguments occur when you provide fewer or more arguments than a function needs to do its work. For example, here’s what happens if we try to call describe_pet() with no arguments:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Display information about a pet.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I have a </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">animal_type</span><span class="si">}</span><span class="s2">&#39;s name is </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 
 <span class="c1"># describe_pet()</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="return-values-a-class-anchor-id-return-values-a">
@@ -1018,7 +1062,9 @@ title="Print to PDF"
 <section id="returning-a-simple-value">
 <h3><a class="toc-backref" href="#id13"><span class="section-number">8.2.9. </span>Returning a Simple Value</a><a class="headerlink" href="#returning-a-simple-value" title="Permalink to this headline">#</a></h3>
 <p>Let’s look at a function that takes a first and last name, and returns a neatly formatted full name:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a full name, neatly formatted.&quot;&quot;&quot;</span>
     <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">return</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
@@ -1027,12 +1073,16 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="making-an-argument-optional">
 <h3><a class="toc-backref" href="#id14"><span class="section-number">8.2.10. </span>Making an Argument Optional</a><a class="headerlink" href="#making-an-argument-optional" title="Permalink to this headline">#</a></h3>
 <p>Sometimes it makes sense to make an argument optional so that people using the function can choose to provide extra information only if they want to. You can use default values to make an argument optional.</p>
 <p>For example, say we want to expand get_formatted_name() to handle middle names as well. A first attempt to include middle names might look like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">middle_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">middle_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a full name, neatly formatted.&quot;&quot;&quot;</span>
     <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">middle_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">return</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
@@ -1041,9 +1091,13 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>This function works when given a first, middle, and last name. The function takes in all three parts of a name and then builds a string out of them. The function adds spaces where appropriate and converts the full name to title case.</p>
 <p>But middle names aren’t always needed, and this function as written would not work if you tried to call it with only a first name and a last name. To make the middle name optional, we can give the middle_name argument an empty default value and ignore the argument unless the user provides a value. To make get_formatted_name() work without a middle name, we set the default value of middle_name to an empty string and move it to the end of the list of parameters:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">middle_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">middle_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a full name, neatly formatted.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">middle_name</span><span class="p">:</span>
         <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">middle_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -1058,11 +1112,15 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="returning-a-dictionary">
 <h3><a class="toc-backref" href="#id15"><span class="section-number">8.2.11. </span>Returning a Dictionary</a><a class="headerlink" href="#returning-a-dictionary" title="Permalink to this headline">#</a></h3>
 <p>A function can return any kind of value you need it to, including more complicated data structures like lists and dictionaries. For example, the following function takes in parts of a name and returns a dictionary representing a person:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a dictionary of information about a person.&quot;&quot;&quot;</span>
     <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="n">last_name</span><span class="p">}</span>
     <span class="k">return</span> <span class="n">person</span>
@@ -1071,8 +1129,12 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>This function takes in simple textual information and puts it into a more meaningful data structure that lets you work with the information beyond just printing it. The strings ‘jimi’ and ‘hendrix’ are now labeled as a first name and last name. You can easily extend this function to accept optional values like a middle name, an age, an occupation, or any other information you want to store about a person. For example, the following change allows you to store a person’s age as well:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a dictionary of information about a person.&quot;&quot;&quot;</span>
     <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="n">last_name</span><span class="p">}</span>
     <span class="k">if</span> <span class="n">age</span><span class="p">:</span>
@@ -1083,12 +1145,16 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We add a new optional parameter age to the function definition and assign the parameter the special value None, which is used when a variable has no specific value assigned to it. You can think of None as a placeholder value. In conditional tests, None evaluates to False. If the function call includes a value for age, that value is stored in the dictionary. This function always stores a person’s name, but it can also be modified to store any other information you want about a person.</p>
 </section>
 <section id="using-a-function-with-a-while-loop">
 <h3><a class="toc-backref" href="#id16"><span class="section-number">8.2.12. </span>Using a Function with a while Loop</a><a class="headerlink" href="#using-a-function-with-a-while-loop" title="Permalink to this headline">#</a></h3>
 <p>You can use functions with all the Python structures you’ve learned about so far. For example, let’s use the get_formatted_name() function with a while loop to greet users more formally. Here’s a first attempt at greeting people using their first and last names:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a full name, neatly formatted.&quot;&quot;&quot;</span>
     <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">return</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
@@ -1110,12 +1176,16 @@ title="Print to PDF"
 <span class="c1">#     print(f&quot;\nHello, {formatted_name}!&quot;)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="passing-a-list-a-class-anchor-id-passing-a-list-a">
 <h3><a class="toc-backref" href="#id17"><span class="section-number">8.2.13. </span>PASSING A LIST <a class='anchor' id='passing-a-list'></a></a><a class="headerlink" href="#passing-a-list-a-class-anchor-id-passing-a-list-a" title="Permalink to this headline">#</a></h3>
 <p>You’ll often find it useful to pass a list to a function, whether it’s a list of names, numbers, or more complex objects, such as dictionaries. When you pass a list to a function, the function gets direct access to the contents of the list. Let’s use functions to make working with lists more efficient.</p>
 <p>Say we have a list of users and want to print a greeting to each. The following example sends a list of names to a function called greet_users(), which greets each person in the list individually:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet_users</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet_users</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Print a simple greeting to each user in the list.&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">!&quot;</span>
@@ -1125,12 +1195,16 @@ title="Print to PDF"
 <span class="n">greet_users</span><span class="p">(</span><span class="n">usernames</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="modifying-a-list-in-a-function">
 <h3><a class="toc-backref" href="#id18"><span class="section-number">8.2.14. </span>Modifying a List in a Function</a><a class="headerlink" href="#modifying-a-list-in-a-function" title="Permalink to this headline">#</a></h3>
 <p>When you pass a list to a function, the function can modify the list. Any changes made to the list inside the function’s body are permanent, allowing you to work efficiently even when you’re dealing with large amounts of data.</p>
 <p>Consider a company that creates 3D printed models of designs that users submit. Designs that need to be printed are stored in a list, and after being printed they’re moved to a separate list. The following code does this without using functions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with some designs that need to be printed.</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with some designs that need to be printed.</span>
 <span class="n">unprinted_designs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;phone case&#39;</span><span class="p">,</span> <span class="s1">&#39;robot pendant&#39;</span><span class="p">,</span> <span class="s1">&#39;dodecahedron&#39;</span><span class="p">]</span>
 <span class="n">completed_models</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -1147,9 +1221,13 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="n">completed_model</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>This program starts with a list of designs that need to be printed and an empty list called completed_models that each design will be moved to after it has been printed. As long as designs remain in unprinted_designs, the while loop simulates printing each design by removing a design from the end of the list, storing it in current_design, and displaying a message that the current design is being printed. It then adds the design to the list of completed models. When the loop is finished running, a list of the designs that have been printed is displayed.</p>
 <p>We can reorganize this code by writing two functions, each of which does one specific job. Most of the code won’t change; we’re just making it more carefully structured. The first function will handle printing the designs, and the second will summarize the prints that have been made:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_models</span><span class="p">(</span><span class="n">unprinted_designs</span><span class="p">,</span> <span class="n">completed_models</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_models</span><span class="p">(</span><span class="n">unprinted_designs</span><span class="p">,</span> <span class="n">completed_models</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Simulate printing each design, until none are left.</span>
 <span class="sd">    Move each design to completed_models after printing.</span>
@@ -1172,6 +1250,8 @@ title="Print to PDF"
 <span class="n">show_completed_models</span><span class="p">(</span><span class="n">completed_models</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We set up a list of unprinted designs and an empty list that will hold the completed models. Then, because we’ve already defined our two functions, all we have to do is call them and pass them the right arguments. We call print_models() and pass it the two lists it needs; as expected, print_models() simulates printing the designs. Then we call show_completed_models() and pass it the list of completed models so it can report the models that have been printed. The descriptive function names allow others to read this code and understand it, even without comments.</p>
 <p>This program is easier to extend and maintain than the version without functions. If we need to print more designs later on, we can simply call print_models() again. If we realize the printing code needs to be modified, we can change the code once, and our changes will take place everywhere the function is called. This technique is more efficient than having to update code separately in several places in the program.</p>
 <p>This example also demonstrates the idea that every function should have one specific job. The first function prints each design, and the second displays the completed models. This is more beneficial than using one function to do both jobs. If you’re writing a function and notice the function is doing too many different tasks, try to split the code into two functions. Remember that you can always call a function from another function, which can be helpful when splitting a complex task into a series of steps.</p>
@@ -1184,7 +1264,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The slice notation [:] makes a copy of the list to send to the function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_models</span><span class="p">(</span><span class="n">unprinted_designs</span><span class="p">,</span> <span class="n">completed_models</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_models</span><span class="p">(</span><span class="n">unprinted_designs</span><span class="p">,</span> <span class="n">completed_models</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Simulate printing each design, until none are left.</span>
 <span class="sd">    Move each design to completed_models after printing.</span>
@@ -1206,6 +1288,8 @@ title="Print to PDF"
 <span class="n">print_models</span><span class="p">(</span><span class="n">unprinted_designs</span><span class="p">[:],</span> <span class="n">completed_models</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The function print_models() can do its work because it still receives the names of all unprinted designs. But this time it uses a copy of the original unprinted designs list, not the actual unprinted_designs list. The list completed_models will fill up with the names of printed models like it did before, but the original list of unprinted designs will be unaffected by the function.</p>
 <p>Even though you can preserve the contents of a list by passing a copy of it to your functions, you should pass the original list to functions unless you have a specific reason to pass a copy. It’s more efficient for a function to work with an existing list to avoid using the time and memory needed to make a separate copy, especially when you’re working with large lists.</p>
 </section>
@@ -1213,7 +1297,9 @@ title="Print to PDF"
 <h3><a class="toc-backref" href="#id20"><span class="section-number">8.2.16. </span>PASSING AN ARBITRARY NUMBER OF ARGUMENTS <a class='anchor' id='passing-arbitrary-arguments'></a></a><a class="headerlink" href="#passing-an-arbitrary-number-of-arguments-a-class-anchor-id-passing-arbitrary-arguments-a" title="Permalink to this headline">#</a></h3>
 <p>Sometimes you won’t know ahead of time how many arguments a function needs to accept. Fortunately, Python allows a function to collect an arbitrary number of arguments from the calling statement.</p>
 <p>For example, consider a function that builds a pizza. It needs to accept a number of toppings, but you can’t know ahead of time how many toppings a person will want. The function in the following example has one parameter, *toppings, but this parameter collects as many arguments as the calling line provides:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Print the list of toppings that have been requested.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">toppings</span><span class="p">)</span>
 
@@ -1221,9 +1307,13 @@ title="Print to PDF"
 <span class="n">make_pizza</span><span class="p">(</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The asterisk in the parameter name <code class="docutils literal notranslate"><span class="pre">*toppings</span></code> tells Python to make an empty tuple called toppings and pack whatever values it receives into this tuple. The print() call in the function body produces output showing that Python can handle a function call with one value and a call with three values. It treats the different calls similarly. Note that Python packs the arguments into a tuple, even if the function receives only one value.</p>
 <p>Now we can replace the print() call with a loop that runs through the list of toppings and describes the pizza being ordered:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Summarize the pizza we are about to make.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Making a pizza with the following toppings:&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
@@ -1233,12 +1323,16 @@ title="Print to PDF"
 <span class="n">make_pizza</span><span class="p">(</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="mixing-positional-and-arbitrary-arguments">
 <h3><a class="toc-backref" href="#id21"><span class="section-number">8.2.17. </span>Mixing Positional and Arbitrary Arguments</a><a class="headerlink" href="#mixing-positional-and-arbitrary-arguments" title="Permalink to this headline">#</a></h3>
 <p>If you want a function to accept several different kinds of arguments, the parameter that accepts an arbitrary number of arguments must be placed last in the function definition. Python matches positional and keyword arguments first and then collects any remaining arguments in the final parameter.</p>
 <p>For example, if the function needs to take in a size for the pizza, that parameter must come before the parameter <code class="docutils literal notranslate"><span class="pre">*toppings</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Summarize the pizza we are about to make.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Making a </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2">-inch pizza with the following toppings:&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
@@ -1248,11 +1342,15 @@ title="Print to PDF"
 <span class="n">make_pizza</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="using-arbitrary-keyword-arguments">
 <h3><a class="toc-backref" href="#id22"><span class="section-number">8.2.18. </span>Using Arbitrary Keyword Arguments</a><a class="headerlink" href="#using-arbitrary-keyword-arguments" title="Permalink to this headline">#</a></h3>
 <p>Sometimes you’ll want to accept an arbitrary number of arguments, but you won’t know ahead of time what kind of information will be passed to the function. In this case, you can write functions that accept as many key-value pairs as the calling statement provides. One example involves building user profiles: you know you’ll get information about a user, but you’re not sure what kind of information you’ll receive. The function build_profile() in the following example always takes in a first and last name, but it accepts an arbitrary number of keyword arguments as well:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_profile</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="o">**</span><span class="n">user_info</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_profile</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="o">**</span><span class="n">user_info</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Build a dictionary containing everything we know about a user.&quot;&quot;&quot;</span>
     <span class="n">user_info</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">first</span>
     <span class="n">user_info</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">last</span>
@@ -1263,6 +1361,8 @@ title="Print to PDF"
                              <span class="n">field</span><span class="o">=</span><span class="s1">&#39;physics&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">user_profile</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The definition of build_profile() expects a first and last name, and then it allows the user to pass in as many name-value pairs as they want. The double asterisks before the parameter <code class="docutils literal notranslate"><span class="pre">**user_info</span></code> cause Python to create an empty dictionary called user_info and pack whatever name-value pairs it receives into this dictionary. Within the function, you can access the key-value pairs in user_info just as you would for any dictionary.</p>
 <p>You can mix positional, keyword, and arbitrary values in many different ways when writing your own functions. It’s useful to know that all these argument types exist because you’ll see them often when you start reading other people’s code. It takes practice to learn to use the different types correctly and to know when to use each type. For now, remember to use the simplest approach that gets the job done. As you progress you’ll learn to use the most efficient approach each time.</p>
