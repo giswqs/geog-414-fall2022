@@ -19,9 +19,6 @@ jupyter:
 :depth: 2
 ```
 
-[![image](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giswqs/geog-312/blob/master/lectures/01_getting_started.ipynb)
-[![image](https://binder.pangeo.io/badge_logo.svg)](https://gishub.org/geog312-pangeo)
-
 ## Jupyter Notebook Keyboard Shortcuts
 
 - **Shift-Enter**: run cell, select below

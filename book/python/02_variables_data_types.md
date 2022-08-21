@@ -12,9 +12,6 @@ jupyter:
     name: python3
 ---
 
-[![image](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/giswqs/geog-312/blob/master/lectures/02_variables_data_types.ipynb)
-[![image](https://binder.pangeo.io/badge_logo.svg)](https://gishub.org/geog312-pangeo)
-
 # Variables and Data Types
 
 ```{contents}
