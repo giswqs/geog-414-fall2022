@@ -23,5 +23,3 @@ This repo is for the _Spatial Data Management_ course (GEOG-414) that I teach in
 <img src="https://geog-414.gishub.org/_images/ch04_style_census_roads.jpg" style="width:auto">
 <figcaption align="center"><b>Fig. 3 </b>Visualizing US Census road data with Earth Engine and geemap.</figcaption>
 </figure>
-
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vRVE2ze_l7BUTgLp2vNeYanAnXvECT0h9m3kneExXzQjw5lutg1lQ8tYTAD4LLW2nU_2eg5SzwsBgJw/pub?embedded=true"></iframe>
