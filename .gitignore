@@ -1,1 +1,3 @@
 _build/
+private/
+**/.ipynb_checkpoints/

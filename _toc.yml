@@ -39,6 +39,11 @@ parts:
       - file: book/gee/09_timelapse
       - file: book/gee/10_webapps
       - file: book/gee/11_applications
+  - caption: Labs
+    numbered: false
+    maxdepth: 2
+    chapters:
+      - file: book/labs/lab_01
   - caption: Appendix
     chapters:
       - file: book/gee/bibliography
