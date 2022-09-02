@@ -5,7 +5,7 @@ This repo is for the _Spatial Data Management_ course (GEOG-414) that I teach in
 ## Recommended Textbooks
 
 - Matthes, Eric (2019). _Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming_. No Starch Press. ISBN: 978-1593279288. ([Publisher website](https://nostarch.com/pythoncrashcourse2e))
-- Qiusheng Wu (2022). _Geospatial Data Science with Earth Engine and Geemap_. Locate Press. ([Publisher website](https://locatepress.com/book/geemap) | [Book website](https://book.geemap.org/) | [GitHub](https://github.com/giswqs/geebook))
+- Qiusheng Wu (2022). _Geospatial Data Science with Earth Engine and Geemap_. Locate Press. ([Publisher website](https://locatepress.com/book/geemap) | [Book website](https://geog-414.gishub.org/) | [GitHub](https://github.com/giswqs/geog-414))
 
 ## Demos
 
