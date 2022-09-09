@@ -45,6 +45,7 @@ parts:
     chapters:
       - file: book/labs/README
       - file: book/labs/lab_01
+      - file: book/labs/lab_02
   - caption: Appendix
     chapters:
       - file: book/gee/bibliography
