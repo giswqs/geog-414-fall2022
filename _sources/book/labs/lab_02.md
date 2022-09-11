@@ -72,7 +72,7 @@ Add a line at the end of your program stating what these animals have in common.
 
 ## Question 5
 
-**Summing a Hundred:** Make a list of the numbers from one to one million, and then use `min()` and `max()` to make sure your list actually starts at one and ends at one hundred. Also, use the sum() function to see how quickly Python can add a hundred numbers.
+**Summing a Hundred:** Make a list of the numbers from one to one hundred, and then use `min()` and `max()` to make sure your list actually starts at one and ends at one hundred. Also, use the sum() function to see how quickly Python can add a hundred numbers.
 
 ```{code-cell} ipython3
 
