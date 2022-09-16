@@ -125,7 +125,7 @@ def describe_pet(animal_type, pet_name):
 describe_pet('harry', 'hamster')
 ```
 
-n this function call we list the name first and the type of animal second. Because the argument 'harry' is listed first this time, that value is assigned to the parameter animal_type. Likewise, 'hamster' is assigned to pet_name. Now we have a “harry” named “Hamster”.
+In this function call we list the name first and the type of animal second. Because the argument 'harry' is listed first this time, that value is assigned to the parameter animal_type. Likewise, 'hamster' is assigned to pet_name. Now we have a “harry” named “Hamster”.
 
 If you get funny results like this, check to make sure the order of the arguments in your function call matches the order of the parameters in the function’s definition.
 
