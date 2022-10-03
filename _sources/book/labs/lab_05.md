@@ -24,8 +24,8 @@ print(f"Submitted time: {now}")
 
 ## Readings
 
-- [3.3 Earth Engine data types](https://spatial.utk.edu/gee/chapters/03_gee_data.html#earth-engine-data-types)
-- [3.4. Earth Engine Data Catalog](https://spatial.utk.edu/gee/chapters/03_gee_data.html#earth-engine-data-catalog)
+- [3.3 Earth Engine data types](https://book.geemap.org/chapters/03_gee_data.html#earth-engine-data-types)
+- [3.4. Earth Engine Data Catalog](https://book.geemap.org/chapters/03_gee_data.html#earth-engine-data-catalog)
 
 +++ {"tags": []}
 
