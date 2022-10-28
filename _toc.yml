@@ -51,6 +51,7 @@ parts:
       - file: book/labs/lab_05
       - file: book/labs/lab_06
       - file: book/labs/lab_07
+      - file: book/labs/lab_08
   - caption: Appendix
     chapters:
       - file: book/gee/bibliography
