@@ -79,7 +79,7 @@ Filter the USGS Watershed Boundary dataset and select the watershed that interse
 
 ## Question 3
 
-Clip the [USGS 3DEP 10m DEM](https://developers.google.com/earth-engine/datasets/catalog/USGS_3DEP_10m) the watershed that intersects Knox County, TN. Display the DEM with a proper color palette and color bar.
+Clip the [USGS 3DEP 10m DEM](https://developers.google.com/earth-engine/datasets/catalog/USGS_3DEP_10m) with the watershed that intersects Knox County, TN. Display the DEM with a proper color palette and color bar.
 
 ```{code-cell} ipython3
 

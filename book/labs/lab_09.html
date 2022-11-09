@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lab 2 &#8212; Spatial Data Management with Earth Engine</title>
+    <title>Lab 9 &#8212; Spatial Data Management with Earth Engine</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://geog-414.gishub.org/book/labs/lab_02.html" />
+    <link rel="canonical" href="https://geog-414.gishub.org/book/labs/lab_09.html" />
     <link rel="shortcut icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 3" href="lab_03.html" />
-    <link rel="prev" title="Lab 1" href="lab_01.html" />
+    <link rel="next" title="Bibliography" href="../gee/bibliography.html" />
+    <link rel="prev" title="Lab 8" href="lab_08.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -264,8 +264,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lab 1
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab_02.html">
    Lab 2
   </a>
  </li>
@@ -299,8 +299,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lab 8
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lab_09.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lab 9
   </a>
  </li>
@@ -380,7 +380,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/giswqs/geog-414/master?urlpath=tree/book/labs/lab_02.ipynb"
+        <a href="https://mybinder.org/v2/gh/giswqs/geog-414/master?urlpath=tree/book/labs/lab_09.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -398,7 +398,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/giswqs/geog-414/blob/master/book/labs/lab_02.ipynb"
+        <a href="https://colab.research.google.com/github/giswqs/geog-414/blob/master/book/labs/lab_09.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -458,7 +458,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/giswqs/geog-414/issues/new?title=Issue%20on%20page%20%2Fbook/labs/lab_02.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/giswqs/geog-414/issues/new?title=Issue%20on%20page%20%2Fbook/labs/lab_09.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -475,7 +475,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/giswqs/geog-414/edit/master/book/labs/lab_02.md"
+        <a href="https://github.com/giswqs/geog-414/edit/master/book/labs/lab_09.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -503,7 +503,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/book/labs/lab_02.ipynb"
+        <a href="../../_sources/book/labs/lab_09.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -520,7 +520,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../../_sources/book/labs/lab_02.md"
+        <a href="../../_sources/book/labs/lab_09.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -604,81 +604,6 @@ title="Print to PDF"
    Question 5
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-6">
-   Question 6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-7">
-   Question 7
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-8">
-   Question 8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-9">
-   Question 9
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-10">
-   Question 10
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-11">
-   Question 11
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-12">
-   Question 12
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-13">
-   Question 13
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-14">
-   Question 14
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-15">
-   Question 15
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-16">
-   Question 16
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-17">
-   Question 17
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-18">
-   Question 18
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-19">
-   Question 19
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-20">
-   Question 20
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -688,7 +613,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab 2</h1>
+                <h1>Lab 9</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -723,81 +648,6 @@ title="Print to PDF"
    Question 5
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-6">
-   Question 6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-7">
-   Question 7
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-8">
-   Question 8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-9">
-   Question 9
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-10">
-   Question 10
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-11">
-   Question 11
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-12">
-   Question 12
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-13">
-   Question 13
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-14">
-   Question 14
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-15">
-   Question 15
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-16">
-   Question 16
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-17">
-   Question 17
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-18">
-   Question 18
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-19">
-   Question 19
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-20">
-   Question 20
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -808,8 +658,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lab-2">
-<h1>Lab 2<a class="headerlink" href="#lab-2" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-9">
+<h1>Lab 9<a class="headerlink" href="#lab-9" title="Permalink to this headline">#</a></h1>
 <p><strong>Firstname Lastname</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -821,141 +671,61 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install geemap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
+<span class="kn">import</span> <span class="nn">geemap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_initialize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="question-1">
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h2>
-<p><strong>Pizzas:</strong> Think of at least three kinds of your favorite pizza. Store these pizza names in a list, and then use a for loop to print the name of each pizza.</p>
-<p>Modify your for loop to print a sentence using the name of the pizza instead of printing just the name of the pizza. For each pizza you should have one line of output containing a simple statement like <em>I like pepperoni pizza.</em></p>
-<p>Add a line at the end of your program, outside the for loop, that states how much you like pizza. The output should consist of three or more lines about the kinds of pizza you like and then an additional sentence, such as <em>I really love pizza!</em></p>
+<p>Use the following datasets to create an interactive map with two layers: the elevation layer for Tennessee and county boundary layer for Tennessee. Add a color bar for the elevation layer.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/TIGER_2018_Counties">US Census Counties</a>: <code class="docutils literal notranslate"><span class="pre">ee.FeatureCollection('TIGER/2018/Counties')</span></code></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/USGS_SRTMGL1_003">NASA SRTM Digital Elevation 30m</a>: <code class="docutils literal notranslate"><span class="pre">ee.Image(&quot;USGS/SRTMGL1_003&quot;)</span></code></p></li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/wzUOUXj.png" /></p>
 </section>
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
-<p><strong>Animals:</strong> Think of at least three different animals that have a common characteristic. Store the names of these animals in a list, and then use a for loop to print out the name of each animal.</p>
-<p>Modify your program to print a statement about each animal, such as <em>A dog would make a great pet.</em></p>
-<p>Add a line at the end of your program stating what these animals have in common. You could print a sentence such as <em>Any of these animals would make a great pet!</em></p>
+<p>Use zonal statistics to find out the mean elevation of each county in Tennessee. Create a bar chart to show the mean elevation of counties in Tennessee.</p>
+<p><img alt="" src="https://i.imgur.com/RNFs8g9.png" /></p>
 </section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h2>
-<p><strong>Counting to Twenty:</strong> Use a for loop to print the numbers from 1 to 20, inclusive.</p>
+<p>Select the top 3 counties with the highest mean elevation and highlight them on the map (e.g., adding as a new layer).</p>
+<p><img alt="" src="https://i.imgur.com/aANMfGi.png" /></p>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">#</a></h2>
-<p><strong>One Hundred:</strong> Make a list of the numbers from one to one hundred, and then use a for loop to print the numbers.</p>
+<p>Use the following datasets to create an interactive map with two layers: the landcover layer for Tennessee and the county boundary layer for tennessee. Add the corresponding legend for the land cover layer.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v100">ESA WorldCover 10m</a>: <code class="docutils literal notranslate"><span class="pre">ee.ImageCollection(&quot;ESA/WorldCover/v100&quot;)</span></code></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/TIGER_2018_Counties">US Census Counties</a>: <code class="docutils literal notranslate"><span class="pre">ee.FeatureCollection('TIGER/2018/Counties')</span></code></p></li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/UTdjvX8.png" /></p>
 </section>
 <section id="question-5">
 <h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">#</a></h2>
-<p><strong>Summing a Hundred:</strong> Make a list of the numbers from one to one hundred, and then use <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">max()</span></code> to make sure your list actually starts at one and ends at one hundred. Also, use the sum() function to see how quickly Python can add a hundred numbers.</p>
-</section>
-<section id="question-6">
-<h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">#</a></h2>
-<p><strong>Odd Numbers:</strong> Use the third argument of the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function to make a list of the odd numbers from 1 to 20. Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print each number.</p>
-</section>
-<section id="question-7">
-<h2>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">#</a></h2>
-<p><strong>Threes:</strong> Make a list of the multiples of 3 from 3 to 30. Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print the numbers in your list.</p>
-</section>
-<section id="question-8">
-<h2>Question 8<a class="headerlink" href="#question-8" title="Permalink to this headline">#</a></h2>
-<p><strong>Cubes:</strong> A number raised to the third power is called a cube. For example, the cube of 2 is written as 2 ** 3 in Python. Make a list of the first 10 cubes (that is, the cube of each integer from 1 through 10), and use a for loop to print out the value of each cube.</p>
-</section>
-<section id="question-9">
-<h2>Question 9<a class="headerlink" href="#question-9" title="Permalink to this headline">#</a></h2>
-<p><strong>Cube Comprehension:</strong> Use a list comprehension to generate a list of the first 10 cubes.</p>
-</section>
-<section id="question-10">
-<h2>Question 10<a class="headerlink" href="#question-10" title="Permalink to this headline">#</a></h2>
-<p><strong>Slices:</strong> Using one of the programs you wrote in this lab, add several lines to the end of the program that do the following:</p>
-<p>Print the message <em>The first three items in the list are:</em>. Then use a slice to print the first three items from that program’s list.</p>
-<p>Print the message <em>Three items from the middle of the list are:</em>. Use a slice to print three items from the middle of the list.</p>
-<p>Print the message <em>The last three items in the list are:</em>. Use a slice to print the last three items in the list.</p>
-<p>Prove that you have two separate lists. Print the message <em>My favorite pizzas are:</em>, and then use a for loop to print the first list. Print the message <em>My friend’s favorite pizzas are:</em>, and then use a for loop to print the second list. Make sure each new pizza is stored in the appropriate list.</p>
-</section>
-<section id="question-11">
-<h2>Question 11<a class="headerlink" href="#question-11" title="Permalink to this headline">#</a></h2>
-<p><strong>Buffet:</strong> A buffet-style restaurant offers only five basic foods. Think of five simple foods, and store them in a tuple.</p>
-<p>Use a for loop to print each food the restaurant offers.</p>
-<p>Try to modify one of the items, and make sure that Python rejects the change.</p>
-<p>The restaurant changes its menu, replacing two of the items with different foods. Add a line that rewrites the tuple, and then use a for loop to print each of the items on the revised menu.</p>
-</section>
-<section id="question-12">
-<h2>Question 12<a class="headerlink" href="#question-12" title="Permalink to this headline">#</a></h2>
-<p><strong>Alien Colors # 1:</strong> Imagine an alien was just shot down in a game. Create a variable called <code class="docutils literal notranslate"><span class="pre">alien_color</span></code> and assign it a value of <code class="docutils literal notranslate"><span class="pre">green,</span> <span class="pre">yellow,</span></code> or <code class="docutils literal notranslate"><span class="pre">red</span></code>.</p>
-<ul class="simple">
-<li><p>Write an if statement to test whether the alien’s color is green. If it is, print a message that the player just earned 5 points.</p></li>
-<li><p>Write one version of this program that passes the if test and another that fails. (The version that fails will have no output.)</p></li>
-</ul>
-</section>
-<section id="question-13">
-<h2>Question 13<a class="headerlink" href="#question-13" title="Permalink to this headline">#</a></h2>
-<p><strong>Alien Colors # 2:</strong> Choose a color for an alien as you did in Question 1, and write an <code class="docutils literal notranslate"><span class="pre">if-else</span></code> chain.</p>
-<ul class="simple">
-<li><p>If the alien’s color is green, print a statement that the player just earned 5 points for shooting the alien.</p></li>
-<li><p>If the alien’s color isn’t green, print a statement that the player just earned 10 points.</p></li>
-<li><p>Write one version of this program that runs the if block and another that runs the else block.</p></li>
-</ul>
-</section>
-<section id="question-14">
-<h2>Question 14<a class="headerlink" href="#question-14" title="Permalink to this headline">#</a></h2>
-<p><strong>Alien Colors # 3:</strong> Turn your <code class="docutils literal notranslate"><span class="pre">if-else</span></code> chain from Question 2 into an <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> chain.</p>
-<ul class="simple">
-<li><p>If the alien is green, print a message that the player earned 5 points.</p></li>
-<li><p>If the alien is yellow, print a message that the player earned 10 points.</p></li>
-<li><p>If the alien is red, print a message that the player earned 15 points.</p></li>
-<li><p>Write three versions of this program, making sure each message is printed for the appropriate color alien.</p></li>
-</ul>
-</section>
-<section id="question-15">
-<h2>Question 15<a class="headerlink" href="#question-15" title="Permalink to this headline">#</a></h2>
-<p><strong>Stages of Life:</strong> Write an <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> chain that determines a person’s stage of life. Set a value for the variable <code class="docutils literal notranslate"><span class="pre">age</span></code>, and then:</p>
-<ul class="simple">
-<li><p>If the person is less than 2 years old, print a message that the person is a baby.</p></li>
-<li><p>If the person is at least 2 years old but less than 4, print a message that the person is a toddler.</p></li>
-<li><p>If the person is at least 4 years old but less than 13, print a message that the person is a kid.</p></li>
-<li><p>If the person is at least 13 years old but less than 20, print a message that the person is a teenager.</p></li>
-<li><p>If the person is at least 20 years old but less than 65, print a message that the person is an adult.</p></li>
-</ul>
-</section>
-<section id="question-16">
-<h2>Question 16<a class="headerlink" href="#question-16" title="Permalink to this headline">#</a></h2>
-<p><strong>Favorite Fruit:</strong> Make a list of your favorite fruits, and then write a series of independent <code class="docutils literal notranslate"><span class="pre">if</span></code> statements that check for certain fruits in your list.</p>
-<ul class="simple">
-<li><p>Make a list of your three favorite fruits and call it favorite_fruits.</p></li>
-<li><p>Write five if statements. Each should check whether a certain kind of fruit is in your list. If the fruit is in your list, the if block should print a statement, such as You really like bananas!</p></li>
-</ul>
-</section>
-<section id="question-17">
-<h2>Question 17<a class="headerlink" href="#question-17" title="Permalink to this headline">#</a></h2>
-<p><strong>Hello Admin:</strong> Make a list of five or more usernames, including the name <code class="docutils literal notranslate"><span class="pre">admin</span></code>. Imagine you are writing code that will print a greeting to each user after they log in to a website. Loop through the list, and print a greeting to each user:</p>
-<ul class="simple">
-<li><p>If the username is ‘admin’, print a special greeting, such as <em>Hello admin, would you like to see a status report?</em></p></li>
-<li><p>Otherwise, print a generic greeting, such as <em>Hello Jaden, thank you for logging in again</em>.</p></li>
-</ul>
-</section>
-<section id="question-18">
-<h2>Question 18<a class="headerlink" href="#question-18" title="Permalink to this headline">#</a></h2>
-<p><strong>No Users:</strong> Based on Question 6, add an <code class="docutils literal notranslate"><span class="pre">if</span></code> test to make sure the list of users is not empty.</p>
-<ul class="simple">
-<li><p>If the list is empty, print the message <em>We need to find some users!</em></p></li>
-<li><p>Remove all of the usernames from your list, and make sure the correct message is printed.</p></li>
-</ul>
-</section>
-<section id="question-19">
-<h2>Question 19<a class="headerlink" href="#question-19" title="Permalink to this headline">#</a></h2>
-<p><strong>Checking Usernames:</strong> Do the following to create a program that simulates how websites ensure that everyone has a unique username.</p>
-<ul class="simple">
-<li><p>Make a list of five or more usernames called <code class="docutils literal notranslate"><span class="pre">current_users</span></code>.</p></li>
-<li><p>Make another list of five usernames called <code class="docutils literal notranslate"><span class="pre">new_users</span></code>. Make sure one or two of the new usernames are also in the <code class="docutils literal notranslate"><span class="pre">current_users</span></code> list.</p></li>
-<li><p>Loop through the <code class="docutils literal notranslate"><span class="pre">new_users</span></code> list to see if each new username has already been used. If it has, print a message that the person will need to enter a new username. If a username has not been used, print a message saying that the username is available.</p></li>
-<li><p>Make sure your comparison is case insensitive. If ‘John’ has been used, ‘JOHN’ should not be accepted. (To do this, you’ll need to make a copy of <code class="docutils literal notranslate"><span class="pre">current_users</span></code> containing the lowercase versions of all existing users.)</p></li>
-</ul>
-</section>
-<section id="question-20">
-<h2>Question 20<a class="headerlink" href="#question-20" title="Permalink to this headline">#</a></h2>
-<p><strong>Ordinal Numbers:</strong> Ordinal numbers indicate their position in a list, such as <em>1st</em> or <em>2nd</em>. Most ordinal numbers end in <em>th</em>, except 1, 2, and 3.</p>
-<ul class="simple">
-<li><p>Store the numbers 1 through 9 in a list.</p></li>
-<li><p>Loop through the list.</p></li>
-<li><p>Use an <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> chain inside the loop to print the proper ordinal ending for each number. Your output should read “1st 2nd 3rd 4th 5th 6th 7th 8th 9th”, and each result should be on a separate line.</p></li>
-</ul>
+<p>Use zonal statistics by group to find out the cropland area by county. Create a bar chart and pie chart to show the cropland area by county.</p>
+<p><img alt="" src="https://i.imgur.com/5JZEBGM.png" /></p>
+<p><img alt="" src="https://i.imgur.com/5UFWnfF.png" /></p>
 </section>
 </section>
 
@@ -986,17 +756,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="lab_01.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lab_08.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 1</p>
+            <p class="prev-next-title">Lab 8</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lab_03.html" title="next page">
+    <a class='right-next' id="next-link" href="../gee/bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 3</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
