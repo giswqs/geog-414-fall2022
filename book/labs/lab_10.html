@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lab 3 &#8212; Spatial Data Management with Earth Engine</title>
+    <title>Lab 10 &#8212; Spatial Data Management with Earth Engine</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://geog-414.gishub.org/book/labs/lab_03.html" />
+    <link rel="canonical" href="https://geog-414.gishub.org/book/labs/lab_10.html" />
     <link rel="shortcut icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 4" href="lab_04.html" />
-    <link rel="prev" title="Lab 2" href="lab_02.html" />
+    <link rel="next" title="Bibliography" href="../gee/bibliography.html" />
+    <link rel="prev" title="Lab 9" href="lab_09.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -269,8 +269,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lab 2
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab_03.html">
    Lab 3
   </a>
  </li>
@@ -304,8 +304,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lab 9
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lab_10.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lab 10
   </a>
  </li>
@@ -385,7 +385,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/giswqs/geog-414/master?urlpath=tree/book/labs/lab_03.ipynb"
+        <a href="https://mybinder.org/v2/gh/giswqs/geog-414/master?urlpath=tree/book/labs/lab_10.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -403,7 +403,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/giswqs/geog-414/blob/master/book/labs/lab_03.ipynb"
+        <a href="https://colab.research.google.com/github/giswqs/geog-414/blob/master/book/labs/lab_10.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -463,7 +463,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/giswqs/geog-414/issues/new?title=Issue%20on%20page%20%2Fbook/labs/lab_03.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/giswqs/geog-414/issues/new?title=Issue%20on%20page%20%2Fbook/labs/lab_10.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -480,7 +480,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/giswqs/geog-414/edit/master/book/labs/lab_03.md"
+        <a href="https://github.com/giswqs/geog-414/edit/master/book/labs/lab_10.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -508,7 +508,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/book/labs/lab_03.ipynb"
+        <a href="../../_sources/book/labs/lab_10.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -525,7 +525,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../../_sources/book/labs/lab_03.md"
+        <a href="../../_sources/book/labs/lab_10.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -584,112 +584,30 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lab 3
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-1">
    Question 1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-2">
-     Question 2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-3">
-     Question 3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-4">
-     Question 4
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-5">
-     Question 5
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-6">
-     Question 6
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-7">
-     Question 7
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-8">
-     Question 8
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-9">
-     Question 9
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-10">
-     Question 10
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-11">
-     Question 11
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-12">
-     Question 12
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-13">
-     Question 13
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-14">
-     Question 14
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-15">
-     Question 15
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-16">
-     Question 16
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-17">
-     Question 17
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-18">
-     Question 18
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-19">
-     Question 19
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-20">
-     Question 20
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3">
+   Question 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4">
+   Question 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5">
+   Question 5
+  </a>
  </li>
 </ul>
 
@@ -700,7 +618,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab 3</h1>
+                <h1>Lab 10</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -710,112 +628,30 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lab 3
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-1">
    Question 1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-2">
-     Question 2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-3">
-     Question 3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-4">
-     Question 4
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-5">
-     Question 5
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-6">
-     Question 6
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-7">
-     Question 7
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-8">
-     Question 8
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-9">
-     Question 9
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-10">
-     Question 10
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-11">
-     Question 11
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-12">
-     Question 12
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-13">
-     Question 13
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-14">
-     Question 14
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-15">
-     Question 15
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-16">
-     Question 16
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-17">
-     Question 17
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-18">
-     Question 18
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-19">
-     Question 19
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-20">
-     Question 20
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3">
+   Question 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4">
+   Question 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5">
+   Question 5
+  </a>
  </li>
 </ul>
 
@@ -827,8 +663,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lab-3">
-<h1>Lab 3<a class="headerlink" href="#lab-3" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-10">
+<h1>Lab 10<a class="headerlink" href="#lab-10" title="Permalink to this headline">#</a></h1>
 <p><strong>Firstname Lastname</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -840,100 +676,56 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install geemap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
+<span class="kn">import</span> <span class="nn">geemap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_initialize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h2>
+<p>Use the following datasets to create a cloud-free imagery for Knox County, TN for the year of 2021.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED">Sentinel-2 MSI</a>: <code class="docutils literal notranslate"><span class="pre">ee.ImageCollection(&quot;COPERNICUS/S2_SR_HARMONIZED&quot;)</span></code></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/TIGER_2018_Counties">US Census Counties</a>: <code class="docutils literal notranslate"><span class="pre">ee.FeatureCollection('TIGER/2018/Counties')</span></code></p></li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/82PY5uM.png" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="question-1">
-<h1>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h1>
-<p><strong>Person:</strong> Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live. You should have keys such as first_name, last_name, age, and city. Print each piece of information stored in your dictionary.</p>
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
-<p><strong>Favorite Numbers:</strong> Use a dictionary to store people’s favorite numbers. Think of five names, and use them as keys in your dictionary. Think of a favorite number for each person, and store each as a value in your dictionary. Print each person’s name and their favorite number. For even more fun, poll a few friends and get some actual data for your program.</p>
+<p>Download the cloud-free imagery created in Question 1 to your computer. You might need to specify <code class="docutils literal notranslate"><span class="pre">region</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code>, and <code class="docutils literal notranslate"><span class="pre">crs</span></code> when downloading the imagery. If you are not sure about the <code class="docutils literal notranslate"><span class="pre">crs</span></code>, check the first image in the resulting collection like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">collection.first().select(0).projection().getInfo()</span></code></p>
 </section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h2>
-<p><strong>Glossary:</strong> A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.</p>
-<ul class="simple">
-<li><p>Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.</p></li>
-<li><p>Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.</p></li>
-</ul>
+<p>Create a fishnet of 5 rows * 5 cols covering Knox County and download the cloud-free imagery created in Question 1 by fishnet.</p>
+<p><img alt="" src="https://i.imgur.com/hqJeJoA.png" /></p>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">#</a></h2>
-<p><strong>Glossary 2:</strong> Now that you know how to loop through a dictionary, clean up the code from Question 3 by replacing your series of print() calls with a loop that runs through the dictionary’s keys and values. When you’re sure that your loop works, add five more Python terms to your glossary. When you run your program again, these new words and meanings should automatically be included in the output.</p>
+<p>Create a Landsat timelapse (1984-2022) for Knox County, TN.</p>
+<p><img alt="" src="https://i.imgur.com/ggw5d31.gif" /></p>
 </section>
 <section id="question-5">
 <h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">#</a></h2>
-<p><strong>Rivers:</strong> Make a dictionary containing three major rivers and the country each river runs through. One key-value pair might be ‘nile’: ‘egypt’.</p>
-<ul class="simple">
-<li><p>Use a loop to print a sentence about each river, such as <em>The Nile runs through Egypt.</em></p></li>
-<li><p>Use a loop to print the name of each river included in the dictionary.</p></li>
-<li><p>Use a loop to print the name of each country included in the dictionary.</p></li>
-</ul>
-</section>
-<section id="question-6">
-<h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">#</a></h2>
-<p><strong>Cities:</strong> Make a dictionary called <code class="docutils literal notranslate"><span class="pre">cities</span></code>. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. The keys for each city’s dictionary should be something like <code class="docutils literal notranslate"><span class="pre">country</span></code>, <code class="docutils literal notranslate"><span class="pre">population</span></code>, and <code class="docutils literal notranslate"><span class="pre">fact</span></code>. Print the name of each city and all of the information you have stored about it.</p>
-</section>
-<section id="question-7">
-<h2>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">#</a></h2>
-<p><strong>Rental Car:</strong> Write a program that asks the user what kind of rental car they would like. Print a message about that car, such as “Let me see if I can find you a Subaru.”</p>
-</section>
-<section id="question-8">
-<h2>Question 8<a class="headerlink" href="#question-8" title="Permalink to this headline">#</a></h2>
-<p><strong>Restaurant Seating:</strong> Write a program that asks the user how many people are in their dinner group. If the answer is more than eight, print a message saying they’ll have to wait for a table. Otherwise, report that their table is ready.</p>
-</section>
-<section id="question-9">
-<h2>Question 9<a class="headerlink" href="#question-9" title="Permalink to this headline">#</a></h2>
-<p><strong>Multiples of Ten:</strong> Ask the user for a number, and then report whether the number is a multiple of 10 or not.</p>
-</section>
-<section id="question-10">
-<h2>Question 10<a class="headerlink" href="#question-10" title="Permalink to this headline">#</a></h2>
-<p><strong>Pizza Toppings:</strong> Write a loop that prompts the user to enter a series of pizza toppings until they enter a ‘quit’ value. As they enter each topping, print a message saying you’ll add that topping to their pizza.</p>
-</section>
-<section id="question-11">
-<h2>Question 11<a class="headerlink" href="#question-11" title="Permalink to this headline">#</a></h2>
-<p><strong>Message:</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">display_message()</span></code> that prints one sentence telling everyone what you are learning about in this chapter. Call the function, and make sure the message displays correctly.</p>
-</section>
-<section id="question-12">
-<h2>Question 12<a class="headerlink" href="#question-12" title="Permalink to this headline">#</a></h2>
-<p><strong>Favorite Book:</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">favorite_book()</span></code> that accepts one parameter, title. The function should print a message, such as <code class="docutils literal notranslate"><span class="pre">One</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">favorite</span> <span class="pre">books</span> <span class="pre">is</span> <span class="pre">Alice</span> <span class="pre">in</span> <span class="pre">Wonderland</span></code>. Call the function, making sure to include a book title as an argument in the function call.</p>
-</section>
-<section id="question-13">
-<h2>Question 13<a class="headerlink" href="#question-13" title="Permalink to this headline">#</a></h2>
-<p><strong>T-Shirt:</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">make_shirt()</span></code> that accepts a size and the text of a message that should be printed on the shirt. The function should print a sentence summarizing the size of the shirt and the message printed on it.</p>
-<p>Call the function once using positional arguments to make a shirt. Call the function a second time using keyword arguments.</p>
-</section>
-<section id="question-14">
-<h2>Question 14<a class="headerlink" href="#question-14" title="Permalink to this headline">#</a></h2>
-<p><strong>Large Shirts:</strong> Modify the <code class="docutils literal notranslate"><span class="pre">make_shirt()</span></code> function so that shirts are large by default with a message that reads <em>I love Python</em>. Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.</p>
-</section>
-<section id="question-15">
-<h2>Question 15<a class="headerlink" href="#question-15" title="Permalink to this headline">#</a></h2>
-<p><strong>Cities:</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">describe_city()</span></code> that accepts the name of a city and its country. The function should print a simple sentence, such as <code class="docutils literal notranslate"><span class="pre">Reykjavik</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">Iceland</span></code>. Give the parameter for the country a default value. Call your function for three different cities, at least one of which is not in the default country.</p>
-</section>
-<section id="question-16">
-<h2>Question 16<a class="headerlink" href="#question-16" title="Permalink to this headline">#</a></h2>
-<p><strong>City Names:</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">city_country()</span></code> that takes in the name of a city and its country. The function should return a string formatted like this:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Santiago, Chile
-</pre></div>
-</div>
-<p>Call your function with at least three city-country pairs, and print the values that are returned.</p>
-</section>
-<section id="question-17">
-<h2>Question 17<a class="headerlink" href="#question-17" title="Permalink to this headline">#</a></h2>
-<p><strong>Album:</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">make_album()</span></code> that builds a dictionary describing a music album. The function should take in an artist name and an album title, and it should return a dictionary containing these two pieces of information. Use the function to make three dictionaries representing different albums. Print each return value to show that the dictionaries are storing the album information correctly.</p>
-<p>Use None to add an optional parameter to make_album() that allows you to store the number of songs on an album. If the calling line includes a value for the number of songs, add that value to the album’s dictionary. Make at least one new function call that includes the number of songs on an album.</p>
-</section>
-<section id="question-18">
-<h2>Question 18<a class="headerlink" href="#question-18" title="Permalink to this headline">#</a></h2>
-<p><strong>User Albums:</strong> Start with your program from Question 17. Write a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop that allows users to enter an album’s artist and title. Once you have that information, call <code class="docutils literal notranslate"><span class="pre">make_album()</span></code> with the user’s input and print the dictionary that’s created. Be sure to include a quit value in the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
-</section>
-<section id="question-19">
-<h2>Question 19<a class="headerlink" href="#question-19" title="Permalink to this headline">#</a></h2>
-<p><strong>Messages:</strong> Make a list containing a series of short text messages. Pass the list to a function called <code class="docutils literal notranslate"><span class="pre">show_messages()</span></code>, which prints each text message.</p>
-</section>
-<section id="question-20">
-<h2>Question 20<a class="headerlink" href="#question-20" title="Permalink to this headline">#</a></h2>
-<p><strong>Sending Messages:</strong> Start with a copy of your program from Question 19. Write a function called <code class="docutils literal notranslate"><span class="pre">send_messages()</span></code> that prints each text message and moves each message to a new list called <code class="docutils literal notranslate"><span class="pre">sent_messages</span></code> as it’s printed. After calling the function, print both of your lists to make sure the messages were moved correctly.</p>
+<p>Create a NAIP imagery timelapse for Knox County, TN.</p>
+<p><img alt="" src="https://i.imgur.com/Aat7dIB.gif" /></p>
 </section>
 </section>
 
@@ -964,17 +756,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="lab_02.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lab_09.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 2</p>
+            <p class="prev-next-title">Lab 9</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lab_04.html" title="next page">
+    <a class='right-next' id="next-link" href="../gee/bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 4</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
