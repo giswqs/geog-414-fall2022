@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>20. Building Web Apps &#8212; Spatial Data Management with Earth Engine</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,712 +61,451 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/gee/10_webapps';</script>
     <link rel="canonical" href="https://geog-414.gishub.org/book/gee/10_webapps.html" />
     <link rel="shortcut icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="21. Earth Engine Applications" href="11_applications.html" />
     <link rel="prev" title="19. Creating Timelapses" href="09_timelapse.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Spatial Data Management with Earth Engine</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Preface
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preface</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../preface/instructor.html">
-   Instructor
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../preface/syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../preface/software.html">
-   Software
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../preface/instructor.html">Instructor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preface/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preface/software.html">Software</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python Basics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Basics</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/01_getting_started.html">
-   1. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/02_variables_data_types.html">
-   2. Variables and Data Types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/03_introducing_lists.html">
-   3. Introducing List
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/04_working_with_lists.html">
-   4. Working with Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/05_if_statements.html">
-   5. Conditional Statements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/06_dictionaries.html">
-   6. Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/07_user_input_while_loops.html">
-   7. Looping
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/08_functions.html">
-   8. Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/09_classes.html">
-   9. Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../python/10_files_and_exceptions.html">
-   10. Files and Exceptions
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../python/01_getting_started.html">1. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/02_variables_data_types.html">2. Variables and Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/03_introducing_lists.html">3. Introducing List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/04_working_with_lists.html">4. Working with Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/05_if_statements.html">5. Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/06_dictionaries.html">6. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/07_user_input_while_loops.html">7. Looping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/08_functions.html">8. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/09_classes.html">9. Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/10_files_and_exceptions.html">10. Files and Exceptions</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Earth Engine
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Earth Engine</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01_introduction.html">
-   11. Introducing GEE and Geemap
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_maps.html">
-   12. Creating Interactive Maps
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_gee_data.html">
-   13. Using Earth Engine Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_local_data.html">
-   14. Using Local Geospatial Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05_data_viz.html">
-   15. Visualizing Geospatial Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06_data_analysis.html">
-   16. Analyzing Geospatial Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07_data_export.html">
-   17. Exporting Earth Engine Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_cartoee.html">
-   18. Making Maps with Cartoee
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09_timelapse.html">
-   19. Creating Timelapses
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   20. Building Web Apps
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11_applications.html">
-   21. Earth Engine Applications
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="01_introduction.html">11. Introducing GEE and Geemap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_maps.html">12. Creating Interactive Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_gee_data.html">13. Using Earth Engine Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_local_data.html">14. Using Local Geospatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_data_viz.html">15. Visualizing Geospatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_data_analysis.html">16. Analyzing Geospatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_data_export.html">17. Exporting Earth Engine Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_cartoee.html">18. Making Maps with Cartoee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_timelapse.html">19. Creating Timelapses</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">20. Building Web Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_applications.html">21. Earth Engine Applications</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Labs
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/README.html">
-   Submission Instructions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_01.html">
-   Lab 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_02.html">
-   Lab 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_03.html">
-   Lab 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_04.html">
-   Lab 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_05.html">
-   Lab 5
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_06.html">
-   Lab 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_07.html">
-   Lab 7
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_08.html">
-   Lab 8
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_09.html">
-   Lab 9
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../labs/lab_10.html">
-   Lab 10
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/README.html">Submission Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_01.html">Lab 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_02.html">Lab 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_03.html">Lab 3</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_04.html">Lab 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_05.html">Lab 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_06.html">Lab 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_07.html">Lab 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_08.html">Lab 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_09.html">Lab 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_10.html">Lab 10</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="bibliography.html">
-   Bibliography
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="issues.html">
-   Known Issues
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Known Issues</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/giswqs/geog-414/master?urlpath=tree/book/gee/10_webapps.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/giswqs/geog-414/master?urlpath=tree/book/gee/10_webapps.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/giswqs/geog-414/blob/master/book/gee/10_webapps.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/giswqs/geog-414/blob/master/book/gee/10_webapps.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/giswqs/geog-414" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/giswqs/geog-414/edit/main/book/gee/10_webapps.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/giswqs/geog-414/issues/new?title=Issue%20on%20page%20%2Fbook/gee/10_webapps.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/book/gee/10_webapps.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/book/gee/10_webapps.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/giswqs/geog-414"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/giswqs/geog-414/issues/new?title=Issue%20on%20page%20%2Fbook/gee/10_webapps.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/giswqs/geog-414/edit/master/book/gee/10_webapps.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/book/gee/10_webapps.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../../_sources/book/gee/10_webapps.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   20.1. Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   20.2. Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-outcomes">
-   20.3. Learning Outcomes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   20.4. Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technical-requirements">
-   20.5. Technical requirements
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-an-earth-engine-app-using-javascript">
-   20.6. Build an Earth Engine App using JavaScript
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#publish-an-earth-engine-app-from-the-code-editor">
-   20.7. Publish an Earth Engine App from the Code Editor
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#develop-an-earth-engine-app-using-geemap">
-   20.8. Develop an Earth Engine App using geemap
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-a-local-web-server">
-   20.9. Publish an Earth Engine App using a local web server
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-cloud-platforms">
-   20.10. Publish an Earth Engine App using cloud platforms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-an-earth-engine-app-using-streamlit">
-   20.11. Build an Earth Engine App Using Streamlit
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   20.12. Questions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusions">
-   20.13. Conclusions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   20.14. References
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Building Web Apps</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   20.1. Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   20.2. Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-outcomes">
-   20.3. Learning Outcomes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   20.4. Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technical-requirements">
-   20.5. Technical requirements
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-an-earth-engine-app-using-javascript">
-   20.6. Build an Earth Engine App using JavaScript
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#publish-an-earth-engine-app-from-the-code-editor">
-   20.7. Publish an Earth Engine App from the Code Editor
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#develop-an-earth-engine-app-using-geemap">
-   20.8. Develop an Earth Engine App using geemap
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-a-local-web-server">
-   20.9. Publish an Earth Engine App using a local web server
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-cloud-platforms">
-   20.10. Publish an Earth Engine App using cloud platforms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-an-earth-engine-app-using-streamlit">
-   20.11. Build an Earth Engine App Using Streamlit
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   20.12. Questions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusions">
-   20.13. Conclusions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   20.14. References
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Building Web Apps</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">20.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">20.2. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">20.3. Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">20.4. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">20.5. Technical requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-earth-engine-app-using-javascript">20.6. Build an Earth Engine App using JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-an-earth-engine-app-from-the-code-editor">20.7. Publish an Earth Engine App from the Code Editor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-an-earth-engine-app-using-geemap">20.8. Develop an Earth Engine App using geemap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-a-local-web-server">20.9. Publish an Earth Engine App using a local web server</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-cloud-platforms">20.10. Publish an Earth Engine App using cloud platforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-earth-engine-app-using-streamlit">20.11. Build an Earth Engine App Using Streamlit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">20.12. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">20.13. Conclusions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">20.14. References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="building-web-apps">
-<h1><span class="section-number">20. </span>Building Web Apps<a class="headerlink" href="#building-web-apps" title="Permalink to this headline">#</a></h1>
-<div class="contents local topic" id="contents">
+<h1><span class="section-number">20. </span>Building Web Apps<a class="headerlink" href="#building-web-apps" title="Permalink to this heading">#</a></h1>
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
 <li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
@@ -772,41 +522,41 @@ title="Print to PDF"
 <li><p><a class="reference internal" href="#conclusions" id="id14">Conclusions</a></p></li>
 <li><p><a class="reference internal" href="#references" id="id15">References</a></p></li>
 </ul>
-</div>
+</nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id2"><span class="section-number">20.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">20.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/10_webapps.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install pygis</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install pygis</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="overview">
-<h2><a class="toc-backref" href="#id3"><span class="section-number">20.2. </span>Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">20.2. </span>Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="learning-outcomes">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">20.3. </span>Learning Outcomes</a><a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">20.3. </span>Learning Outcomes</a><a class="headerlink" href="#learning-outcomes" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="id1">
-<h2><a class="toc-backref" href="#id5"><span class="section-number">20.4. </span>Introduction</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">20.4. </span>Introduction</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="technical-requirements">
-<h2><a class="toc-backref" href="#id6"><span class="section-number">20.5. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n gee python
-conda activate gee
-conda install -c conda-forge mamba
-mamba install -c conda-forge geemap pygis
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">20.5. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
+conda<span class="w"> </span>activate<span class="w"> </span>gee
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
+mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>geemap<span class="w"> </span>pygis
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter lab
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
 <span class="kn">import</span> <span class="nn">geemap</span>
 </pre></div>
 </div>
@@ -814,231 +564,231 @@ mamba install -c conda-forge geemap pygis
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_initialize</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_initialize</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="build-an-earth-engine-app-using-javascript">
-<h2><a class="toc-backref" href="#id7"><span class="section-number">20.6. </span>Build an Earth Engine App using JavaScript</a><a class="headerlink" href="#build-an-earth-engine-app-using-javascript" title="Permalink to this headline">#</a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get an NLCD image by year.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">getNLCD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Import the NLCD collection.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;USGS/NLCD_RELEASES/2019_REL/NLCD&quot;</span><span class="p">);</span><span class="w"></span>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">20.6. </span>Build an Earth Engine App using JavaScript</a><a class="headerlink" href="#build-an-earth-engine-app-using-javascript" title="Permalink to this heading">#</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get an NLCD image by year.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">getNLCD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Import the NLCD collection.</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;USGS/NLCD_RELEASES/2019_REL/NLCD&quot;</span><span class="p">);</span>
 
-<span class="w">  </span><span class="c1">// Filter the collection by year.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">nlcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dataset</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;system:index&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">)).</span><span class="nx">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Filter the collection by year.</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">nlcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dataset</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;system:index&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">)).</span><span class="nx">first</span><span class="p">();</span>
 
-<span class="w">  </span><span class="c1">// Select the land cover band.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">landcover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nlcd</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;landcover&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">.</span><span class="nx">Layer</span><span class="p">(</span><span class="nx">landcover</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="nx">year</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Select the land cover band.</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">landcover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nlcd</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;landcover&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">.</span><span class="nx">Layer</span><span class="p">(</span><span class="nx">landcover</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="nx">year</span><span class="p">);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a dictionary with each year as the key</span><span class="w"></span>
-<span class="c1">// and its corresponding NLCD image layer as the value.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">images</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2001</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2001&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2004</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2004&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2006</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2006&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2008</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2008&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2011</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2011&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2013</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2013&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2016</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2016&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">  </span><span class="mf">2019</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2019&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a dictionary with each year as the key</span>
+<span class="c1">// and its corresponding NLCD image layer as the value.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">images</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="mf">2001</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2001&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="mf">2004</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2004&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="mf">2006</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2006&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="mf">2008</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2008&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="mf">2011</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2011&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="mf">2013</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2013&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="mf">2016</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2016&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="mf">2019</span><span class="o">:</span><span class="w"> </span><span class="nx">getNLCD</span><span class="p">(</span><span class="s2">&quot;2019&quot;</span><span class="p">),</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create the left map, and have it display the first layer.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">leftMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">();</span><span class="w"></span>
-<span class="nx">leftMap</span><span class="p">.</span><span class="nx">setControlVisibility</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">leftSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">addLayerSelector</span><span class="p">(</span><span class="nx">leftMap</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-left&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create the left map, and have it display the first layer.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">leftMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">();</span>
+<span class="nx">leftMap</span><span class="p">.</span><span class="nx">setControlVisibility</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">leftSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">addLayerSelector</span><span class="p">(</span><span class="nx">leftMap</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-left&quot;</span><span class="p">);</span>
 
-<span class="c1">// Create the right map, and have it display the last layer.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">rightMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">();</span><span class="w"></span>
-<span class="nx">rightMap</span><span class="p">.</span><span class="nx">setControlVisibility</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">rightSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">addLayerSelector</span><span class="p">(</span><span class="nx">rightMap</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-right&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Create the right map, and have it display the last layer.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">rightMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">();</span>
+<span class="nx">rightMap</span><span class="p">.</span><span class="nx">setControlVisibility</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">rightSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">addLayerSelector</span><span class="p">(</span><span class="nx">rightMap</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-right&quot;</span><span class="p">);</span>
 
-<span class="c1">// Adds a layer selection widget to the given map, to allow users to</span><span class="w"></span>
-<span class="c1">// change which image is displayed in the associated map.</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">addLayerSelector</span><span class="p">(</span><span class="nx">mapToChange</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultValue</span><span class="p">,</span><span class="w"> </span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="s2">&quot;Select a year:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Adds a layer selection widget to the given map, to allow users to</span>
+<span class="c1">// change which image is displayed in the associated map.</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">addLayerSelector</span><span class="p">(</span><span class="nx">mapToChange</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultValue</span><span class="p">,</span><span class="w"> </span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="s2">&quot;Select a year:&quot;</span><span class="p">);</span>
 
-<span class="w">  </span><span class="c1">// This function changes the given map to show the selected image.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">updateMap</span><span class="p">(</span><span class="nx">selection</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// mapToChange.layers().set(0, ui.Map.Layer(images[selection]));</span><span class="w"></span>
-<span class="w">    </span><span class="nx">mapToChange</span><span class="p">.</span><span class="nx">layers</span><span class="p">().</span><span class="nx">set</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">selection</span><span class="p">]);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// This function changes the given map to show the selected image.</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">updateMap</span><span class="p">(</span><span class="nx">selection</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// mapToChange.layers().set(0, ui.Map.Layer(images[selection]));</span>
+<span class="w">    </span><span class="nx">mapToChange</span><span class="p">.</span><span class="nx">layers</span><span class="p">().</span><span class="nx">set</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">selection</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="c1">// Configure a selection dropdown to allow the user to choose</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// between images, and set the map to update when a user</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// makes a selection.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Select</span><span class="p">({</span><span class="w"> </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">images</span><span class="p">),</span><span class="w"> </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="nx">updateMap</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
-<span class="w">  </span><span class="nx">select</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">images</span><span class="p">)[</span><span class="nx">defaultValue</span><span class="p">],</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Configure a selection dropdown to allow the user to choose</span>
+<span class="w">  </span><span class="c1">// between images, and set the map to update when a user</span>
+<span class="w">  </span><span class="c1">// makes a selection.</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Select</span><span class="p">({</span><span class="w"> </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">images</span><span class="p">),</span><span class="w"> </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="nx">updateMap</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">select</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">images</span><span class="p">)[</span><span class="nx">defaultValue</span><span class="p">],</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">controlPanel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">widgets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">select</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">controlPanel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">widgets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">select</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">});</span>
 
-<span class="w">  </span><span class="nx">mapToChange</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">controlPanel</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mapToChange</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">controlPanel</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set the legend title.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;NLCD Land Cover Classification&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set the legend title.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;NLCD Land Cover Classification&quot;</span><span class="p">;</span>
 
-<span class="c1">// Set the legend position.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bottom-right&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Set the legend position.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bottom-right&quot;</span><span class="p">;</span>
 
-<span class="c1">// Define a dictionary that will be used to make a legend</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">names</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;11 Open Water&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;12 Perennial Ice/Snow&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;21 Developed, Open Space&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;22 Developed, Low Intensity&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;23 Developed, Medium Intensity&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;24 Developed, High Intensity&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;31 Barren Land (Rock/Sand/Clay)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;41 Deciduous Forest&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;42 Evergreen Forest&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;43 Mixed Forest&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;51 Dwarf Scrub&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;52 Shrub/Scrub&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;71 Grassland/Herbaceous&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;72 Sedge/Herbaceous&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;73 Lichens&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;74 Moss&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;81 Pasture/Hay&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;82 Cultivated Crops&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;90 Woody Wetlands&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;95 Emergent Herbaceous Wetlands&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="c1">// Define a dictionary that will be used to make a legend</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">names</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;11 Open Water&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;12 Perennial Ice/Snow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;21 Developed, Open Space&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;22 Developed, Low Intensity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;23 Developed, Medium Intensity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;24 Developed, High Intensity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;31 Barren Land (Rock/Sand/Clay)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;41 Deciduous Forest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;42 Evergreen Forest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;43 Mixed Forest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;51 Dwarf Scrub&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;52 Shrub/Scrub&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;71 Grassland/Herbaceous&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;72 Sedge/Herbaceous&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;73 Lichens&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;74 Moss&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;81 Pasture/Hay&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;82 Cultivated Crops&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;90 Woody Wetlands&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;95 Emergent Herbaceous Wetlands&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">],</span>
 
-<span class="w">  </span><span class="nx">colors</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#466b9f&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#d1def8&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#dec5c5&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#d99282&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#eb0000&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#ab0000&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#b3ac9f&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#68ab5f&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#1c5f2c&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#b5c58f&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#af963c&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#ccb879&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#dfdfc2&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#d1d182&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#a3cc51&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#82ba9e&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#dcd939&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#ab6c28&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#b8d9eb&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;#6c9fb8&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">],</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="nx">colors</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;#466b9f&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#d1def8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#dec5c5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#d99282&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#eb0000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#ab0000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#b3ac9f&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#68ab5f&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#1c5f2c&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#b5c58f&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#af963c&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#ccb879&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#dfdfc2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#d1d182&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#a3cc51&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#82ba9e&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#dcd939&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#ab6c28&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#b8d9eb&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;#6c9fb8&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a panel to hold the legend widget.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8px 15px&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a panel to hold the legend widget.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8px 15px&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">});</span>
 
-<span class="c1">// Function to generate the legend.</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">addCategoricalLegend</span><span class="p">(</span><span class="nx">panel</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Create and add the legend title.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">legendTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nx">fontWeight</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;18px&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0 0 4px 0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="p">});</span><span class="w"></span>
-<span class="w">  </span><span class="nx">panel</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">legendTitle</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Function to generate the legend.</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">addCategoricalLegend</span><span class="p">(</span><span class="nx">panel</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Create and add the legend title.</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">legendTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">fontWeight</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;18px&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0 0 4px 0&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">panel</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">legendTitle</span><span class="p">);</span>
 
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">loading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="s2">&quot;Loading legend...&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2px 0 4px 0&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
-<span class="w">  </span><span class="nx">panel</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">loading</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">loading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="s2">&quot;Loading legend...&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2px 0 4px 0&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">panel</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">loading</span><span class="p">);</span>
 
-<span class="w">  </span><span class="c1">// Creates and styles 1 row of the legend.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">makeRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">color</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// Create the label that is actually the colored box.</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">colorBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">({</span><span class="w"></span>
-<span class="w">      </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="nx">color</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// Use padding to give the box height and width.</span><span class="w"></span>
-<span class="w">        </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8px&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0 0 4px 0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Creates and styles 1 row of the legend.</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">makeRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">color</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Create the label that is actually the colored box.</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">colorBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="nx">color</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// Use padding to give the box height and width.</span>
+<span class="w">        </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8px&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0 0 4px 0&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="w">    </span><span class="c1">// Create the label filled with the description text.</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">({</span><span class="w"></span>
-<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0 0 4px 6px&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Create the label filled with the description text.</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0 0 4px 6px&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span><span class="w"></span>
-<span class="w">      </span><span class="nx">widgets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">colorBox</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="nx">layout</span><span class="o">:</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">.</span><span class="nx">Layout</span><span class="p">.</span><span class="nx">Flow</span><span class="p">(</span><span class="s2">&quot;horizontal&quot;</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
-<span class="w">  </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">widgets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">colorBox</span><span class="p">,</span><span class="w"> </span><span class="nx">description</span><span class="p">],</span>
+<span class="w">      </span><span class="nx">layout</span><span class="o">:</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">.</span><span class="nx">Layout</span><span class="p">.</span><span class="nx">Flow</span><span class="p">(</span><span class="s2">&quot;horizontal&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">};</span>
 
-<span class="w">  </span><span class="c1">// Get the list of palette colors and class names from the image.</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dict</span><span class="p">.</span><span class="nx">colors</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dict</span><span class="p">.</span><span class="nx">names</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">().</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;shown&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Get the list of palette colors and class names from the image.</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dict</span><span class="p">.</span><span class="nx">colors</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dict</span><span class="p">.</span><span class="nx">names</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">().</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;shown&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">panel</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">makeRow</span><span class="p">(</span><span class="nx">palette</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">panel</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">makeRow</span><span class="p">(</span><span class="nx">palette</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span>
+<span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="nx">rightMap</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">panel</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="nx">rightMap</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">panel</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="nx">addCategoricalLegend</span><span class="p">(</span><span class="nx">legend</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">);</span><span class="w"></span>
+<span class="nx">addCategoricalLegend</span><span class="p">(</span><span class="nx">legend</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a SplitPanel to hold the adjacent, linked maps.</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">splitPanel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">SplitPanel</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">firstPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">leftMap</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">secondPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">rightMap</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">wipe</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">stretch</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;both&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a SplitPanel to hold the adjacent, linked maps.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">splitPanel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nx">SplitPanel</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">firstPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">leftMap</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">secondPanel</span><span class="o">:</span><span class="w"> </span><span class="nx">rightMap</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">wipe</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">stretch</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;both&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">});</span>
 
-<span class="c1">// Set the SplitPanel as the only thing in the UI root.</span><span class="w"></span>
-<span class="nx">ui</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">widgets</span><span class="p">().</span><span class="nx">reset</span><span class="p">([</span><span class="nx">splitPanel</span><span class="p">]);</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">linker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">.</span><span class="nx">Linker</span><span class="p">([</span><span class="nx">leftMap</span><span class="p">,</span><span class="w"> </span><span class="nx">rightMap</span><span class="p">]);</span><span class="w"></span>
-<span class="nx">leftMap</span><span class="p">.</span><span class="nx">setCenter</span><span class="p">(</span><span class="o">-</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Set the SplitPanel as the only thing in the UI root.</span>
+<span class="nx">ui</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">widgets</span><span class="p">().</span><span class="nx">reset</span><span class="p">([</span><span class="nx">splitPanel</span><span class="p">]);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">linker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ui</span><span class="p">.</span><span class="nb">Map</span><span class="p">.</span><span class="nx">Linker</span><span class="p">([</span><span class="nx">leftMap</span><span class="p">,</span><span class="w"> </span><span class="nx">rightMap</span><span class="p">]);</span>
+<span class="nx">leftMap</span><span class="p">.</span><span class="nx">setCenter</span><span class="p">(</span><span class="o">-</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="publish-an-earth-engine-app-from-the-code-editor">
-<h2><a class="toc-backref" href="#id8"><span class="section-number">20.7. </span>Publish an Earth Engine App from the Code Editor</a><a class="headerlink" href="#publish-an-earth-engine-app-from-the-code-editor" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">20.7. </span>Publish an Earth Engine App from the Code Editor</a><a class="headerlink" href="#publish-an-earth-engine-app-from-the-code-editor" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="develop-an-earth-engine-app-using-geemap">
-<h2><a class="toc-backref" href="#id9"><span class="section-number">20.8. </span>Develop an Earth Engine App using geemap</a><a class="headerlink" href="#develop-an-earth-engine-app-using-geemap" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n gee python
-conda activate gee
-conda install mamba
-mamba install -c conda-forge geospatial
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">20.8. </span>Develop an Earth Engine App using geemap</a><a class="headerlink" href="#develop-an-earth-engine-app-using-geemap" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
+conda<span class="w"> </span>activate<span class="w"> </span>gee
+conda<span class="w"> </span>install<span class="w"> </span>mamba
+mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>geospatial
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate gee
-jupyter notebook
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gee
+jupyter<span class="w"> </span>notebook
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
 <span class="kn">import</span> <span class="nn">geemap</span>
 </pre></div>
 </div>
@@ -1046,7 +796,7 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">Map</span>
 </pre></div>
 </div>
@@ -1054,7 +804,7 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the NLCD collection</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the NLCD collection</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s1">&#39;USGS/NLCD_RELEASES/2019_REL/NLCD&#39;</span><span class="p">)</span>
 
 <span class="c1"># Filter the collection to the 2019 product</span>
@@ -1072,7 +822,7 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;NLCD Land Cover Classification&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;NLCD Land Cover Classification&#39;</span>
 <span class="n">Map</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="s1">&#39;NLCD&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1080,7 +830,7 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">legend_dict</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">legend_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;11 Open Water&#39;</span><span class="p">:</span> <span class="s1">&#39;466b9f&#39;</span><span class="p">,</span>
     <span class="s1">&#39;12 Perennial Ice/Snow&#39;</span><span class="p">:</span> <span class="s1">&#39;d1def8&#39;</span><span class="p">,</span>
     <span class="s1">&#39;21 Developed, Open Space&#39;</span><span class="p">:</span> <span class="s1">&#39;dec5c5&#39;</span><span class="p">,</span>
@@ -1110,21 +860,21 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">aggregate_array</span><span class="p">(</span><span class="s2">&quot;system:id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">aggregate_array</span><span class="p">(</span><span class="s2">&quot;system:id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2001&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;2006&#39;</span><span class="p">,</span> <span class="s1">&#39;2008&#39;</span><span class="p">,</span> <span class="s1">&#39;2011&#39;</span><span class="p">,</span> <span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="s1">&#39;2016&#39;</span><span class="p">,</span> <span class="s1">&#39;2019&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2001&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;2006&#39;</span><span class="p">,</span> <span class="s1">&#39;2008&#39;</span><span class="p">,</span> <span class="s1">&#39;2011&#39;</span><span class="p">,</span> <span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="s1">&#39;2016&#39;</span><span class="p">,</span> <span class="s1">&#39;2019&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an NLCD image by year</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an NLCD image by year</span>
 <span class="k">def</span> <span class="nf">getNLCD</span><span class="p">(</span><span class="n">year</span><span class="p">):</span> <span class="c1"># Import the NLCD collection.</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s1">&#39;USGS/NLCD_RELEASES/2019_REL/NLCD&#39;</span><span class="p">)</span>
 
@@ -1140,7 +890,7 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an NLCD image collection for the selected years</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an NLCD image collection for the selected years</span>
 <span class="n">collection</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="n">ee</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">years</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">year</span><span class="p">:</span> <span class="n">getNLCD</span><span class="p">(</span><span class="n">year</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -1148,14 +898,14 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">collection</span><span class="o">.</span><span class="n">aggregate_array</span><span class="p">(</span><span class="s1">&#39;system:id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">collection</span><span class="o">.</span><span class="n">aggregate_array</span><span class="p">(</span><span class="s1">&#39;system:id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;NLCD </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;NLCD </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">]</span>
 <span class="n">labels</span>
 </pre></div>
 </div>
@@ -1163,7 +913,7 @@ jupyter notebook
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">.</span><span class="n">ts_inspector</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">.</span><span class="n">ts_inspector</span><span class="p">(</span>
     <span class="n">left_ts</span><span class="o">=</span><span class="n">collection</span><span class="p">,</span> <span class="n">right_ts</span><span class="o">=</span><span class="n">collection</span><span class="p">,</span> <span class="n">left_names</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">right_names</span><span class="o">=</span><span class="n">labels</span>
 <span class="p">)</span>
 <span class="n">Map</span>
@@ -1173,48 +923,48 @@ jupyter notebook
 </div>
 </section>
 <section id="publish-an-earth-engine-app-using-a-local-web-server">
-<h2><a class="toc-backref" href="#id10"><span class="section-number">20.9. </span>Publish an Earth Engine App using a local web server</a><a class="headerlink" href="#publish-an-earth-engine-app-using-a-local-web-server" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/ngrok/dir
-conda activate gee
-voila --no-browser nlcd_app.ipynb
+<h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">20.9. </span>Publish an Earth Engine App using a local web server</a><a class="headerlink" href="#publish-an-earth-engine-app-using-a-local-web-server" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/ngrok/dir
+conda<span class="w"> </span>activate<span class="w"> </span>gee
+voila<span class="w"> </span>--no-browser<span class="w"> </span>nlcd_app.ipynb
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/ngrok/dir
-ngrok http <span class="m">8866</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/ngrok/dir
+ngrok<span class="w"> </span>http<span class="w"> </span><span class="m">8866</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>voila --no-browser --strip_sources<span class="o">=</span>False nlcd_app.ipynb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>voila<span class="w"> </span>--no-browser<span class="w"> </span>--strip_sources<span class="o">=</span>False<span class="w"> </span>nlcd_app.ipynb
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ngrok http -auth<span class="o">=</span><span class="s2">&quot;username:password&quot;</span> <span class="m">8866</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ngrok<span class="w"> </span>http<span class="w"> </span>-auth<span class="o">=</span><span class="s2">&quot;username:password&quot;</span><span class="w"> </span><span class="m">8866</span>
 </pre></div>
 </div>
 </section>
 <section id="publish-an-earth-engine-app-using-cloud-platforms">
-<h2><a class="toc-backref" href="#id11"><span class="section-number">20.10. </span>Publish an Earth Engine App using cloud platforms</a><a class="headerlink" href="#publish-an-earth-engine-app-using-cloud-platforms" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>web: voila --port<span class="o">=</span><span class="nv">$PORT</span> --no-browser --strip_sources<span class="o">=</span>True --enable_nbextensions<span class="o">=</span>True --MappingKernelManager.cull_interval<span class="o">=</span><span class="m">60</span> --MappingKernelManager.cull_idle_timeout<span class="o">=</span><span class="m">120</span> notebooks/
+<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">20.10. </span>Publish an Earth Engine App using cloud platforms</a><a class="headerlink" href="#publish-an-earth-engine-app-using-cloud-platforms" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>web:<span class="w"> </span>voila<span class="w"> </span>--port<span class="o">=</span><span class="nv">$PORT</span><span class="w"> </span>--no-browser<span class="w"> </span>--strip_sources<span class="o">=</span>True<span class="w"> </span>--enable_nbextensions<span class="o">=</span>True<span class="w"> </span>--MappingKernelManager.cull_interval<span class="o">=</span><span class="m">60</span><span class="w"> </span>--MappingKernelManager.cull_idle_timeout<span class="o">=</span><span class="m">120</span><span class="w"> </span>notebooks/
 </pre></div>
 </div>
 </section>
 <section id="build-an-earth-engine-app-using-streamlit">
-<h2><a class="toc-backref" href="#id12"><span class="section-number">20.11. </span>Build an Earth Engine App Using Streamlit</a><a class="headerlink" href="#build-an-earth-engine-app-using-streamlit" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate gee
-mamba install -c conda-forge streamlit
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">20.11. </span>Build an Earth Engine App Using Streamlit</a><a class="headerlink" href="#build-an-earth-engine-app-using-streamlit" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gee
+mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>streamlit
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit hello
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>hello
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;Firstname Lastname&quot;</span>
-git config --global user.email user@example.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>user@example.com
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/USERNAME/geemap-apps.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/USERNAME/geemap-apps.git
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
 <span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 <span class="kn">import</span> <span class="nn">geemap.foliumap</span> <span class="k">as</span> <span class="nn">geemap</span>
 </pre></div>
@@ -1223,7 +973,7 @@ git config --global user.email user@example.com
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an NLCD image by year.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an NLCD image by year.</span>
 <span class="k">def</span> <span class="nf">getNLCD</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
     <span class="c1"># Import the NLCD collection.</span>
     <span class="n">dataset</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s2">&quot;USGS/NLCD_RELEASES/2019_REL/NLCD&quot;</span><span class="p">)</span>
@@ -1240,7 +990,7 @@ git config --global user.email user@example.com
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The main app.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The main app.</span>
 <span class="k">def</span> <span class="nf">app</span><span class="p">():</span>
 
     <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;National Land Cover Database (NLCD)&quot;</span><span class="p">)</span>
@@ -1278,31 +1028,31 @@ git config --global user.email user@example.com
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">apps</span> <span class="kn">import</span> <span class="n">home</span><span class="p">,</span> <span class="n">basemaps</span><span class="p">,</span> <span class="n">customize</span><span class="p">,</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">opacity</span><span class="p">,</span> <span class="n">nlcd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">apps</span> <span class="kn">import</span> <span class="n">home</span><span class="p">,</span> <span class="n">basemaps</span><span class="p">,</span> <span class="n">customize</span><span class="p">,</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">opacity</span><span class="p">,</span> <span class="n">nlcd</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apps</span><span class="o">.</span><span class="n">add_app</span><span class="p">(</span><span class="s2">&quot;NLCD&quot;</span><span class="p">,</span> <span class="n">nlcd</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">apps</span><span class="o">.</span><span class="n">add_app</span><span class="p">(</span><span class="s2">&quot;NLCD&quot;</span><span class="p">,</span> <span class="n">nlcd</span><span class="o">.</span><span class="n">app</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate gee
-streamlit run app.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gee
+streamlit<span class="w"> </span>run<span class="w"> </span>app.py
 </pre></div>
 </div>
 </section>
 <section id="questions">
-<h2><a class="toc-backref" href="#id13"><span class="section-number">20.12. </span>Questions</a><a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">20.12. </span>Questions</a><a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="conclusions">
-<h2><a class="toc-backref" href="#id14"><span class="section-number">20.13. </span>Conclusions</a><a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">20.13. </span>Conclusions</a><a class="headerlink" href="#conclusions" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="references">
-<h2><a class="toc-backref" href="#id15"><span class="section-number">20.14. </span>References</a><a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">20.14. </span>References</a><a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://geemap.org/notebooks/40_ipywidgets/">https://geemap.org/notebooks/40_ipywidgets/</a></p></li>
 <li><p><a class="reference external" href="https://geemap.org/notebooks/41_water_app/">https://geemap.org/notebooks/41_water_app/</a></p></li>
@@ -1323,7 +1073,7 @@ streamlit run app.py
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./book/gee"
         },
         predefinedOutput: true
@@ -1331,50 +1081,118 @@ streamlit run app.py
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="09_timelapse.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">19. </span>Creating Timelapses</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="09_timelapse.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Creating Timelapses</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="11_applications.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="11_applications.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">21. </span>Earth Engine Applications</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Qiusheng Wu<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">20.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">20.2. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">20.3. Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">20.4. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">20.5. Technical requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-earth-engine-app-using-javascript">20.6. Build an Earth Engine App using JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-an-earth-engine-app-from-the-code-editor">20.7. Publish an Earth Engine App from the Code Editor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-an-earth-engine-app-using-geemap">20.8. Develop an Earth Engine App using geemap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-a-local-web-server">20.9. Publish an Earth Engine App using a local web server</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-an-earth-engine-app-using-cloud-platforms">20.10. Publish an Earth Engine App using cloud platforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-earth-engine-app-using-streamlit">20.11. Build an Earth Engine App Using Streamlit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">20.12. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">20.13. Conclusions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">20.14. References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Qiusheng Wu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
